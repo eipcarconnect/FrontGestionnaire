@@ -9,6 +9,7 @@
 </head>
 
 <style>
+
 body {
 	background-color: #1E1E1E;
 }
@@ -41,7 +42,13 @@ input::placeholder {
 	padding-top: 5%;
 	padding-left: 70%;
 	padding-bottom: 5%;
+	color: grey;
 }
+
+.change-form a:hover {
+	color: black;
+}
+
 
 a {
 	text-decoration: none;
@@ -52,25 +59,21 @@ a {
 }
 
 .box {
-	margin-left:20%;
-	margin-top:10%;
+	display: flex;
+	margin-left:24%;
+	margin-top:8%;
 	width: 60%;
-	/* border: solid green; */
 }
 
 .box1 {
 	border: solid white;
-	display: inline-block;
 	background-color: white;
 	width: 40%;
   padding: 10px;
 }
 
 .box2 {
-	vertical-align: bottom;
-	/* border: solid red; */
-	display: inline-block;
-	width: 59%;
+	width: 51%;
 }
 
 .hr {
@@ -100,7 +103,7 @@ img {
 	<div class="box">
 		<div class="box1">
 			<div class="change-form">
-				<a href="/login">Connexion</a>
+				<a href="/login"><b>Connexion</b></a>
 			</div>
 
 			<div class="canvas-content">
@@ -124,7 +127,7 @@ img {
 		</div>
 
 		<div class="box2">
-					<img src="/assets/LogoA.Lock.png">
+					<img src="/assets/cartouche.png">
 		</div>
 	</div>
 
