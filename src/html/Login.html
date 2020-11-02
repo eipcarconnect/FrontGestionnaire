@@ -8,26 +8,28 @@
 
 <body>
 
-	<div className="App">
-			<div className="Drawer">
-					<div className="DHeader">
-							<img id="logo" src={logo} height={100}/>
-							<div className="HeaderInfos">
-									<p>USER</p>
-									<p>USER NAME</p>
-									<p>NB VEHICULE</p>
-							</div>
+<div>
+			<div>
+					<div>
+						<button color="light">Se connecter</button>
+						<button onclick="/login" color="medium">S'inscrire</button>
 					</div>
-					<div className="DrawerOptions">
-							<p onClick={()=>setPage("Vehicules")}>Vehicules</p>
-							<p onClick={()=>setPage("Map")}>Map</p>
-							<p onClick={()=>setPage("Factures")}>Factures</p>
-					</div>
-			</div>
-			<div className="Content">
-					{content}
-			</div>
-	</div>
+				<hr>
+				<h3>Créez votre compte!</h3>
+				<item lines="none">
+					<label floating>Email</label>
+					<input [(ngModel)]="email"></input>
+				</item>
+				<item lines="none">
+					<label floating>Mot de passe</label>
+					<input [(ngModel)]="password" type="password"></input>
+				</item><br/>
+				<button (click)="checkLogin()">
+					Se connecter
+				</button>
+		</div>
+
+</div>
 
 </body>
 </html>

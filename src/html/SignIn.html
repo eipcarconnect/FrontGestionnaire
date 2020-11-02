@@ -8,25 +8,32 @@
 
 <body>
 
-	<div className="App">
-			<div className="Drawer">
-					<div className="DHeader">
-							<img id="logo" src={logo} height={100}/>
-							<div className="HeaderInfos">
-									<p>USER</p>
-									<p>USER NAME</p>
-									<p>NB VEHICULE</p>
-							</div>
-					</div>
-					<div className="DrawerOptions">
-							<p onClick={()=>setPage("Vehicules")}>Vehicules</p>
-							<p onClick={()=>setPage("Map")}>Map</p>
-							<p onClick={()=>setPage("Factures")}>Factures</p>
-					</div>
+	<div>
+			<div>
+				<button onclick="/signin" color="medium">Se connecter</button>
+				<button color="light">S'inscrire</button>
 			</div>
-			<div className="Content">
-					{content}
-			</div>
+		<hr>
+		<h3>Créez votre compte!</h3>
+		<item lines="none">
+			<label floating>Nom</label>
+			<input [(ngModel)]="name"></input>
+		</item>
+		<item lines="none">
+			<label floating>Email</label>
+			<input [(ngModel)]="email"></input>
+		</item>
+		<item lines="none">
+			<label floating>Age</label>
+			<input [(ngModel)]="age" type="number"></input>
+		</item>
+		<item lines="none">
+			<label floating>Mot de passe</label>
+			<input [(ngModel)]="password" type="password"></input>
+		</item><br/>
+		<button (click)="addUserToFirebase()">
+			S'inscrire
+		</button>
 	</div>
 
 </body>
