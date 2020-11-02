@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="App.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/auth.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>SignIn</title>
 </head>
+
+<style>
+
+body {
+	background-color: #787f8a;
+}
+
+.button {
+	width: 100%;
+}
+
+.title {
+	color: green;
+}
+
+.box {
+	background-color: white;
+	text-align: center;
+	width: 25%;
+  padding: 10px;
+  border: solid;
+  border-color: black;
+}
+
+</style>
 
 <body>
 
 	<div>
+		<div class="box">
 			<div>
-				<button onclick="/signin" color="medium">Se connecter</button>
-				<button color="light">S'inscrire</button>
+				<a href="/login"><button class="button" color="medium">Se connecter</button></a>
+				<button class="button" color="light">S'inscrire</button>
 			</div>
-		<hr>
-		<h3>Créez votre compte!</h3>
-		<item lines="none">
-			<label floating>Nom</label>
-			<input [(ngModel)]="name"></input>
-		</item>
-		<item lines="none">
-			<label floating>Email</label>
-			<input [(ngModel)]="email"></input>
-		</item>
-		<item lines="none">
-			<label floating>Age</label>
-			<input [(ngModel)]="age" type="number"></input>
-		</item>
-		<item lines="none">
-			<label floating>Mot de passe</label>
-			<input [(ngModel)]="password" type="password"></input>
-		</item><br/>
-		<button (click)="addUserToFirebase()">
-			S'inscrire
-		</button>
+			<hr>
+			<h3 class="title"><b>Création de compte</b></h3>
+			Bienvenue! Remplissez les informations demandées pour créer votre compte d'entreprise.
+			<item lines="none">
+				<input name="nom" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise"></input>
+			</item><br/>
+			<item lines="none">
+				<input class="w3-input w3-border w3-round" type=email placeholder="Adresse email"></input>
+			</item><br/>
+			<item lines="none">
+				<input class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe"></input>
+			</item><br/>
+			<button class="button">
+				S'inscrire
+			</button>
+			<hr>
+		</div>
 	</div>
 
 </body>

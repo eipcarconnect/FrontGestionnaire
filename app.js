@@ -6,19 +6,23 @@ app.get('/', function(req, res){
     res.sendFile('./src/html/index.html', {root: __dirname});
 });
 
-app.get('/Contact', function(req, res){
-    res.sendFile('./src/html/Contact.html', {root: __dirname});
+app.get('/login', function(req, res){
+    res.sendFile('./src/html/Login.html', {root: __dirname});
 });
 
-app.get('/Factures', function(req, res){
+app.get('/signin', function(req, res){
+    res.sendFile('./src/html/SignIn.html', {root: __dirname});
+});
+
+app.get('/factures', function(req, res){
     res.sendFile('./src/html/Factures.html', {root: __dirname});
 });
 
-app.get('/Map', function(req, res){
+app.get('/map', function(req, res){
     res.sendFile('./src/html/Map.html', {root: __dirname});
 });
 
-app.get('/Vehicules', function(req, res){
+app.get('/vehicules', function(req, res){
     res.sendFile('./src/html/Vehicules.html', {root: __dirname});
 });
 
