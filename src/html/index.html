@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="App.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <meta charset="utf-8"/>
 </head>
 
 <body>
 
-	<div className="App">
-			<div className="Drawer">
-					<div className="DHeader">
-							<img id="logo" src={logo} height={100}/>
-							<div className="HeaderInfos">
-									<p>USER</p>
-									<p>USER NAME</p>
-									<p>NB VEHICULE</p>
-							</div>
-					</div>
-					<div className="DrawerOptions">
-							<p onClick={()=>setPage("Vehicules")}>Vehicules</p>
-							<p onClick={()=>setPage("Map")}>Map</p>
-							<p onClick={()=>setPage("Factures")}>Factures</p>
-					</div>
-			</div>
-			<div className="Content">
-					{content}
-			</div>
-	</div>
+<div class="App">
+    <div class="Drawer">
+        <div class="DHeader">
+            <img id="logo" src="../assets/CarConnect.png" height={100}/>
+            <div class="DHeaderInfos">
+                <p>Entreprise</p>
+                <p>42 Véhicules</p>
+            </div>
+        </div>
+        <div class="DOptions">
+            <p onclick="console.log('Vehicules')">Vehicules</p>
+            <p onclick="console.log('Map')">Map</p>
+            <p onclick="console.log('Trajets')">Trajets</p>
+            <p onclick="console.log('Factures')">Factures</p>
+        </div>
+    </div>
+    <div class="Content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Immatriculation</th>
+                    <th>Kilometrage</th>
+                    <th>Niveau Essence (%)</th>
+                    <th>Niveau Batterie (%)</th>
+                </tr>
+            </thead>
+            <tbody id="table_content">
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
+<script src="../js/index.js"></script>
 </html>
