@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="App.css">
+	<title>Login</title>
+</head>
+
+<body>
+
+<div>
+			<div>
+					<div>
+						<button color="light">Se connecter</button>
+						<a href="/signin"><button color="medium">S'inscrire</button></a>
+
+					</div>
+				<hr>
+
+				<h3><b>Connection</b></h3>
+				Bienvenue! Remplissez le nom d'entreprise et le mot de passe pour vous connecter.
+				<item lines="none">
+					<label floating>Email</label>
+					<input [(ngModel)]="email"></input>
+				</item>
+				<item lines="none">
+					<label floating>Mot de passe</label>
+					<input [(ngModel)]="password" type="password"></input>
+				</item><br/>
+				<button (click)="checkLogin()">
+					Se connecter
+				</button>
+		</div>
+
+</div>
+
+</body>
+</html>

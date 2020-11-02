@@ -1,0 +1,26 @@
+{
+  "name": "frontgestionnaire",
+  "version": "1.0.0",
+  "description": "front gestionnaire for CarConnect EIP project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eipcarconnect/FrontGestionnaire.git"
+  },
+  "author": "Augustin Leconte / Sebastien Le Gall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eipcarconnect/FrontGestionnaire/issues"
+  },
+  "homepage": "https://github.com/eipcarconnect/FrontGestionnaire#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "reload": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
