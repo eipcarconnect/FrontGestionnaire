@@ -1,0 +1,61 @@
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  display: flex;
+  flex-direction: row;
+}
+
+.Drawer {
+  width: 15%;
+  height: 100%;
+  background-color: #2c84cc;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Drawer p {
+  color: white;
+  font-weight: bolder;
+}
+
+.DHeader {
+  margin: 16px;
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.DrawerOptions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: start;
+}
+
+.DrawerOptions p {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+}
+
+.DrawerOptions p:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.HeaderInfos {
+  margin: 8px;
+}
+
+#logo {
+  display: block;
+}
+
+.Content {
+  width: 85%;
+  height: 100%;
+}
