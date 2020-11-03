@@ -13,11 +13,11 @@
 <body>
 
 	<div class="box">
-		<form id="signinForm" class="box1 w3-row">
-			<div class="change-form">
-				<a href="/login"><b>Connexion</b></a>
+		<form id="signinForm" class="box1 w3-row" >
+			<div class="change-form log">
+				<!-- <a href="/login"><b>Connexion</b></a> -->
+				<a onclick="goLogIn();"><b>Connexion</b></a>
 			</div>
-
 			<div class="canvas-content">
 				<h3><b>Création de compte</b></h3>
 				<p class="exp-line">Bienvenue! Remplissez toutes les informations demandées pour créer votre compte d'entreprise.</p>
@@ -41,10 +41,41 @@
 				<hr class="hr">
 			</div>
 		</form>
-
 		<div class="box2">
-					<img src="/assets/cartouche.png">
+			<img src="/assets/cartouche.png">
 		</div>
+
+			<form id="loginForm" class="box1 w3-row" hidden>
+				<div class="change-form sign">
+					<!-- <a href="/signin"><b>Inscription</b></a> -->
+					<a onclick="goSignIn();"><b>Inscription</b></a>
+				</div>
+
+				<div class="canvas-content">
+					<h3><b>Connection</b></h3>
+					<p class="exp-line">Bienvenue! Remplissez les informations pour vous connecter à votre compte entreprise.</p>
+					<br/>
+					<br/>
+
+					<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email" required></input><br/>
+					<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe" required></input><br/>
+					<br/>
+				</div>
+
+				<div class="canvas-footer">
+					<button class="summit-button" onclick="logInUser()">
+						Se connecter
+					</button>
+
+					<hr class="hr">
+				</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+			</form>
 	</div>
 
 </body>

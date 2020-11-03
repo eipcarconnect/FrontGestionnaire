@@ -26,12 +26,20 @@ input::placeholder {
   background-color: #064980;
 }
 
+.sign {
+	padding-right: 70%;
+}
+
+.log {
+	padding-left: 80%;
+}
+
 .change-form {
 	padding-top: 5%;
-	padding-left: 70%;
 	padding-bottom: 5%;
 	color: grey;
 }
+
 
 .change-form a:hover {
 	color: black;
@@ -54,14 +62,20 @@ a {
 }
 
 .box1 {
-	border: solid white;
+	/* border: solid green; */
 	background-color: white;
-	width: 40%;
-  padding: 10px;
+	width: 45%;
+}
+
+form {
+	border: solid white;
+	padding: 10px;
 }
 
 .box2 {
-	width: 51%;
+	/* border: solid red; */
+	position: relative;
+	width: 60%;
 }
 
 .hr {
@@ -80,7 +94,7 @@ a {
 }
 
 img {
- /* width: 100%; */
+ width: 100%;
  height: 100%;
 }
 

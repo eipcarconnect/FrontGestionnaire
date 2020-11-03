@@ -22,7 +22,6 @@ function signInUser()
 	xmlHttp.open( "POST", api_url + "auth/manager/signup", true )
 	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlHttp.send(body);
-	console.log("HELLO");
 }
 
 function setMaxDate()
@@ -75,4 +74,14 @@ function setBirthdate()
 			break;
 	}
 	document.getElementById("visualDate").value = birthdate.getDate() + " " + mois + " " + birthdate.getFullYear();
+}
+
+function goSignIn() {
+	document.getElementById("signinForm").hidden = false;
+	document.getElementById("loginForm").hidden = true;
+}
+
+function goLogIn() {
+	document.getElementById("signinForm").hidden = true;
+	document.getElementById("loginForm").hidden = false;
 }
