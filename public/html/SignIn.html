@@ -4,38 +4,43 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/css/auth.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script type="text/javascript" src="/js/signin.js"></script>
 	<meta charset="utf-8"/>
 	<title>SignIn</title>
 </head>
 
+
 <body>
 
 	<div class="box">
-		<div class="box1">
+		<form id="signinForm" class="box1 w3-row">
 			<div class="change-form">
 				<a href="/login"><b>Connexion</b></a>
 			</div>
 
 			<div class="canvas-content">
 				<h3><b>Création de compte</b></h3>
-				<p class="exp-line">Bienvenue! Remplissez les informations demandées pour créer votre compte d'entreprise.</p>
+				<p class="exp-line">Bienvenue! Remplissez toutes les informations demandées pour créer votre compte d'entreprise.</p>
 				<br/>
 
-				<input name="name" class="w3-input w3-border w3-round" placeholder="Nom du gestionnaire"></input><br/>
-				<input name="date" class="w3-input w3-border w3-round" placeholder="Date de naissance du gestionnaire"></input><br/>
-				<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email"></input><br/>
-				<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe"></input><br/>
-				<input name="company" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise"></input><br/>
+				<input name="name" class="w3-input w3-border w3-round" placeholder="NOM et prénom du gestionnaire" required></input><br/>
+				<input id="visualDate" class="w3-input w3-border w3-round w3-twothird" placeholder="Date de naissance gestionnaire" required></input>
+ 				<div class="w3-container w3-third">
+					<input id="birthdate" name="date" class="w3-input w3-border w3-round" onchange="setBirthdate();" type="date" required></input><br/>
+ 				</div>
+				<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email" required></input><br/>
+				<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe" required></input><br/>
+				<input name="company" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise" required></input><br/>
 			</div>
 
 			<div class="canvas-footer">
-				<button class="summit-button">
+				<button class="summit-button" onclick="signInUser()">
 					S'inscrire maintenant
 				</button>
 
 				<hr class="hr">
 			</div>
-		</div>
+		</form>
 
 		<div class="box2">
 					<img src="/assets/cartouche.png">
@@ -43,4 +48,5 @@
 	</div>
 
 </body>
+
 </html>
