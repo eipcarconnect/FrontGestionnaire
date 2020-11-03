@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="App.css">
-	<title>Map</title>
-</head>
+  <head>
+    <title>Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <scriptsrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFx1QUZtIOemxJmXSe74zeFicVezoDojk&callback=initMap" defer></script>
+    <link type="text/css" href="/css/map.css" />
+    <script src="/js/map.js"></script>
+  </head>
 
-<body>
+  <body>
 
-	<div className="App">
-			<div className="Drawer">
-					<div className="DHeader">
-							<img id="logo" src={logo} height={100}/>
-							<div className="HeaderInfos">
-									<p>USER</p>
-									<p>USER NAME</p>
-									<p>NB VEHICULE</p>
-							</div>
-					</div>
-					<div className="DrawerOptions">
-							<p onClick={()=>setPage("Vehicules")}>Vehicules</p>
-							<p onClick={()=>setPage("Map")}>Map</p>
-							<p onClick={()=>setPage("Factures")}>Factures</p>
-					</div>
-			</div>
-			<div className="Content">
-					{content}
-			</div>
-	</div>
+		<h2>Map</h2>
+    <div id="map"></div>
 
-</body>
+  </body>
 </html>
