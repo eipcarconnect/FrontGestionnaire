@@ -16,7 +16,7 @@
 		<form id="signinForm" class="box1 w3-row" >
 			<div class="change-form log">
 				<!-- <a href="/login"><b>Connexion</b></a> -->
-				<a onclick="goLogIn();"><b>Connexion</b></a>
+				<a onclick="moveImg(0);"><b>Connection</b></a>
 			</div>
 			<div class="canvas-content">
 				<h3><b>Création de compte</b></h3>
@@ -41,14 +41,17 @@
 				<hr class="hr">
 			</div>
 		</form>
-		<div class="box2">
+
+
+		<div id="img" class="box2">
 			<img src="/assets/cartouche.png">
 		</div>
+
 
 			<form id="loginForm" class="box1 w3-row" hidden>
 				<div class="change-form sign">
 					<!-- <a href="/signin"><b>Inscription</b></a> -->
-					<a onclick="goSignIn();"><b>Inscription</b></a>
+					<a onclick="moveImg(1);"><b>Inscription</b></a>
 				</div>
 
 				<div class="canvas-content">
@@ -58,7 +61,9 @@
 					<br/>
 
 					<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email" required></input><br/>
-					<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe" required></input><br/>
+					<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe" required></input>
+					<a class="forgetPassword"><i>mot de passe oublié ?</i></a>
+					<br/>
 					<br/>
 				</div>
 
@@ -69,14 +74,32 @@
 
 					<hr class="hr">
 				</div>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
+				<div class="winPlace">
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+				</div>
 			</form>
 	</div>
+
+	<!-- <script>
+		getUrl {}
+		const params = new URLSearchParams(document.location.search);
+		const s = params.get("page");
+		if (page == 0)
+		{
+			document.getElementById("signinForm").hidden = true;
+			document.getElementById("loginForm").hidden = false;
+		}
+		else {
+			document.getElementById("signinForm").hidden = false;
+			document.getElementById("loginForm").hidden = true;
+		}
+	}
+	</script> -->
 
 </body>
 

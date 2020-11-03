@@ -76,12 +76,21 @@ function setBirthdate()
 	document.getElementById("visualDate").value = birthdate.getDate() + " " + mois + " " + birthdate.getFullYear();
 }
 
-function goSignIn() {
-	document.getElementById("signinForm").hidden = false;
-	document.getElementById("loginForm").hidden = true;
-}
-
-function goLogIn() {
-	document.getElementById("signinForm").hidden = true;
-	document.getElementById("loginForm").hidden = false;
+function moveImg(val) {
+		imgObj = document.getElementById('img');
+    if (val == 1) {
+			imgObj.className = "box2 slide-right";
+			setTimeout(() => {
+			document.getElementById("signinForm").hidden = false;
+			document.getElementById("loginForm").hidden = true; },
+			715);
+    }
+		else
+		{
+			imgObj.className = "box2 slide-left";
+			setTimeout(() => {
+			document.getElementById("signinForm").hidden = true;
+			document.getElementById("loginForm").hidden = false;},
+			715);
+		}
 }
