@@ -3,6 +3,7 @@ const app = express();
 var path = require('path');
 const port = 8000;
 
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
@@ -27,6 +28,10 @@ app.get('/map', function(req, res){
 
 app.get('/vehicules', function(req, res){
     res.sendFile('./public/html/Vehicules.html', {root: __dirname});
+});
+
+app.get('/contact', function(req, res){
+    res.sendFile('./public/html/Contact.html', {root: __dirname});
 });
 
 app.listen(port, () => {

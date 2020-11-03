@@ -2,101 +2,11 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link type="text/css" href="./css/auth.css">
+	<link rel="stylesheet" href="/css/auth.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<meta charset="utf-8"/>
 	<title>SignIn</title>
 </head>
-
-<style>
-
-body {
-	background-color: #1E1E1E;
-}
-
-input::placeholder {
-  background-color: #d1d1d1;
-}
-
-.canvas-content {
-	padding-left: 9%;
-	padding-right: 9%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.summit-button {
-	width: 70%;
-	height: 35px;
-	transition-duration: 0.4s;
-	border-radius: 20px;
-	background-color: #2c84cc;
-	color: white;
-}
-
-.summit-button:hover {
-  background-color: #064980;
-}
-
-.change-form {
-	padding-top: 5%;
-	padding-left: 70%;
-	padding-bottom: 5%;
-	color: grey;
-}
-
-.change-form a:hover {
-	color: black;
-}
-
-
-a {
-	text-decoration: none;
-}
-
-.exp-line {
-	font-size: 15px;
-}
-
-.box {
-	display: flex;
-	margin-left:24%;
-	margin-top:8%;
-	width: 60%;
-}
-
-.box1 {
-	border: solid white;
-	background-color: white;
-	width: 40%;
-  padding: 10px;
-}
-
-.box2 {
-	width: 51%;
-}
-
-.hr {
-	padding: none;
-	color: #d1d1d1;
-	border: 1px solid;
-	width: 70%;
-}
-
-.canvas-footer {
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-img {
- width: 100%;
- height: 100%;
-}
-
-</style>
 
 <body>
 
@@ -111,10 +21,11 @@ img {
 				<p class="exp-line">Bienvenue! Remplissez les informations demandées pour créer votre compte d'entreprise.</p>
 				<br/>
 
-				<input name="name" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise"></input><br/>
+				<input name="name" class="w3-input w3-border w3-round" placeholder="Nom du gestionnaire"></input><br/>
+				<input name="date" class="w3-input w3-border w3-round" placeholder="Date de naissance du gestionnaire"></input><br/>
 				<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email"></input><br/>
 				<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe"></input><br/>
-				<br/>
+				<input name="company" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise"></input><br/>
 			</div>
 
 			<div class="canvas-footer">
