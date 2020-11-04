@@ -24,6 +24,26 @@ function signInUser()
 	xmlHttp.send(body);
 }
 
+function logInUser()
+{
+	var form = document.getElementById("signinForm");
+	var body = {
+		username: form.email,
+		password: form.password,
+	};
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onload = function () {
+		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+			console.log("form envoyé");
+    }
+		else
+			console.log(this.status);
+	}
+	xmlHttp.open( "POST", api_url + "auth/manager/signup", true )
+	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xmlHttp.send(body);
+}
+
 function setMaxDate()
 {
 	var date = new Date();
