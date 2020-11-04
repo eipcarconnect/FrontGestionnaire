@@ -1,4 +1,4 @@
-api_url = "40.85.113.74/"
+api_url = "40.85.113.74:3000/"
 
 function signInUser()
 {

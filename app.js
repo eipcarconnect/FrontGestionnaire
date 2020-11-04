@@ -1,21 +1,24 @@
+var bodyParser = require('body-parser');
 const express = require('express')
 const app = express();
 var path = require('path');
 const port = 8000;
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({extend:true}));
 
 app.get('/', function(req, res){
     res.sendFile('./public/html/index.html', {root: __dirname});
 });
 
 app.get('/login', function(req, res){
-    res.sendFile('./public/html/Login.html', {root: __dirname});
+    res.render('pages/Auth', {auth: true});
 });
 
 app.get('/signin', function(req, res){
-    res.sendFile('./public/html/SignIn.html', {root: __dirname});
+		res.render('pages/Auth', {auth: false});
 });
 
 app.get('/factures', function(req, res){

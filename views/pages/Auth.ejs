@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/css/auth.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<script type="text/javascript" src="/js/signin.js"></script>
+	<script type="text/javascript" src="/js/auth.js"></script>
 	<meta charset="utf-8"/>
 	<title>SignIn</title>
 </head>
@@ -15,7 +15,6 @@
 	<div class="box">
 		<form id="signinForm" class="box1 w3-row" >
 			<div class="change-form log">
-				<!-- <a href="/login"><b>Connexion</b></a> -->
 				<a onclick="moveImg(0);"><b>Connection</b></a>
 			</div>
 			<div class="canvas-content">
@@ -48,9 +47,8 @@
 		</div>
 
 
-			<form id="loginForm" class="box1 w3-row" hidden>
+			<form id="loginForm" class="box1 w3-row">
 				<div class="change-form sign">
-					<!-- <a href="/signin"><b>Inscription</b></a> -->
 					<a onclick="moveImg(1);"><b>Inscription</b></a>
 				</div>
 
@@ -85,22 +83,11 @@
 			</form>
 	</div>
 
-	<!-- <script>
-		getUrl {}
-		const params = new URLSearchParams(document.location.search);
-		const s = params.get("page");
-		if (page == 0)
-		{
-			document.getElementById("signinForm").hidden = true;
-			document.getElementById("loginForm").hidden = false;
-		}
-		else {
-			document.getElementById("signinForm").hidden = false;
-			document.getElementById("loginForm").hidden = true;
-		}
-	}
-	</script> -->
-
 </body>
+
+<script>
+	document.getElementById("signinForm").hidden = <%=auth%>;
+	document.getElementById("loginForm").hidden = !document.getElementById("signinForm").hidden;
+</script>
 
 </html>
