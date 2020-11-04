@@ -24,7 +24,7 @@ function signInUser()
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: body
+			body: JSON.stringify(body)
 		}).then(r=>r.json()).then(r=> {
 			console.log(r)
 		}).then(error=>console.log(error))
