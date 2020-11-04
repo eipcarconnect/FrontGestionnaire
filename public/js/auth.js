@@ -6,7 +6,7 @@ function signInUser()
 	//var birthdate = form.getFullYear() + "-" + form.getMonth() + "-" + form.getDate();
 	var body = {
 		name: form.name,
-		username: form.email,
+		email: form.email,
 		password: form.password,
 		birthdate: form.birthdate,
 		company: form.company
@@ -26,9 +26,9 @@ function signInUser()
 
 function logInUser()
 {
-	var form = document.getElementById("signinForm");
+	var form = document.getElementById("loginForm");
 	var body = {
-		username: form.email,
+		email: form.email,
 		password: form.password,
 	};
 	var xmlHttp = new XMLHttpRequest();
@@ -39,7 +39,7 @@ function logInUser()
 		else
 			console.log(this.status);
 	}
-	xmlHttp.open( "POST", api_url + "auth/manager/signup", true )
+	xmlHttp.open( "POST", api_url + "auth/manager/signin", true )
 	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlHttp.send(body);
 }
