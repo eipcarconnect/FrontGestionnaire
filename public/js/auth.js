@@ -97,6 +97,7 @@ function setBirthdate()
 }
 
 function moveImg(val) {
+		var page = "http://127.0.0.1:8000";
 		imgObj = document.getElementById('img');
     if (val == 1) {
 			imgObj.className = "box2 slide-right";
@@ -104,6 +105,7 @@ function moveImg(val) {
 			document.getElementById("signinForm").hidden = false;
 			document.getElementById("loginForm").hidden = true; },
 			715);
+			page += "/signin";
     }
 		else
 		{
@@ -112,5 +114,7 @@ function moveImg(val) {
 			document.getElementById("signinForm").hidden = true;
 			document.getElementById("loginForm").hidden = false;},
 			715);
+			page += "/login";
 		}
+		history.pushState({id: 'authpage'}, 'Authentification', page);
 }
