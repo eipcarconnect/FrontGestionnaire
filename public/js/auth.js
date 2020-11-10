@@ -11,17 +11,23 @@ function signInUser()
 		birthdate: form.birthdate,
 		company: form.company
 	};
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function () {
-		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-			console.log("form envoyé");
-    }
-		else
-			console.log(this.status);
-	}
-	xmlHttp.open( "POST", api_url + "auth/manager/signup", true )
-	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	xmlHttp.send(body);
+	// var xmlHttp = new XMLHttpRequest();
+	// xmlHttp.open( "POST", api_url + "auth/manager/signup", true )
+	// xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	// xmlHttp.onload = function () {
+	// 	console.log(this);
+	// }
+	// xmlHttp.send(body);
+	fetch(api_url + "auth/manager/signup", {
+			method: "POST",
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(body)
+		}).then(r=>r.json()).then(r=> {
+			console.log(r)
+		}).then(error=>console.log(error))
 }
 
 function logInUser()
@@ -33,11 +39,7 @@ function logInUser()
 	};
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onload = function () {
-		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-			console.log("form envoyé");
-    }
-		else
-			console.log(this.status);
+		console.log(this);
 	}
 	xmlHttp.open( "POST", api_url + "auth/manager/signin", true )
 	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
