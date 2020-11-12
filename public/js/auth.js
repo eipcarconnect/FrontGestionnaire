@@ -99,7 +99,7 @@ function setBirthdate()
 }
 
 function moveImg(val) {
-		var page = "https://front-gestionnaire-web.herokuapp.com/";
+		var page = "https://front-gestionnaire-web.herokuapp.com";
 		imgObj = document.getElementById('img');
     if (val == 1) {
 			imgObj.className = "box2 slide-right";
