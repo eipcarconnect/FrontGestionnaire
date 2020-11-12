@@ -13,6 +13,10 @@ app.get('/', function(req, res){
     res.sendFile('./public/html/index.html', {root: __dirname});
 });
 
+app.get('/index', function(req, res){
+    res.render('pages/Index');
+});
+
 app.get('/login', function(req, res){
     res.render('pages/Auth', {auth: true});
 });

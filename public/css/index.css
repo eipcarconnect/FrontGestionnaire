@@ -21,7 +21,6 @@ code {
     monospace;
 }
 
-<<<<<<< HEAD
 .App {
   width: 100%;
   height: 100%;
@@ -86,7 +85,7 @@ thead, tbody { display: block; }
   overflow-y: auto;    /* Trigger vertical scroll    */
   overflow-x: hidden;  /* Hide the horizontal scroll */
 }
-=======
+
 .submit-form-butt {
     --background: #069c24;
 }
@@ -104,4 +103,3 @@ hr {
 	height: 30%;
 	border-radius: 50%;
 }
->>>>>>> 7c3d9198233e0964a6e6b1b1802b5dc7c1ed197f
