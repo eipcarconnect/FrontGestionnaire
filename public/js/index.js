@@ -1,6 +1,6 @@
-setTimeout(function(){
-    window.location.reload(1);
-}, 5000);
+// setTimeout(function(){
+//     window.location.reload(1);
+// }, 5000);
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -24,7 +24,7 @@ function generate() {
 
 function getCompanyVehicules()
 {
-		var token = store.get('token');
+		var token = localStorage.getItem('token');
 		var form = document.getElementById("loginForm");
 		fetch("http://40.85.113.74:3000/data/manager/getvehicles", {
 				method: "POST",
@@ -36,7 +36,7 @@ function getCompanyVehicules()
 				}
 		})
 		.then(response => response.json())
-		.then(json => console.log());
+		.then(json => console.log(json));
 }
 
-generate()
+generate();
