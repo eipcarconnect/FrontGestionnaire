@@ -29,8 +29,8 @@ app.get('/factures', function(req, res){
     res.sendFile('./public/html/Factures.html', {root: __dirname});
 });
 
-app.get('/map', function(req, res){
-    res.sendFile('./public/html/Map.html', {root: __dirname});
+app.get('/trajets', function(req, res){
+    res.sendFile('./public/html/Trajets.html', {root: __dirname});
 });
 
 app.get('/vehicules', function(req, res){

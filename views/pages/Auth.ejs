@@ -23,10 +23,6 @@
 				<br/>
 
 				<input name="name" class="w3-input w3-border w3-round" placeholder="NOM et prénom du gestionnaire" required></input><br/>
-				<input id="visualDate" class="w3-input w3-border w3-round w3-twothird" placeholder="Date de naissance gestionnaire" required></input>
- 				<div class="w3-container w3-third">
-					<input id="birthdate" name="date" class="w3-input w3-border w3-round" onchange="setBirthdate();" type="date" ></input><br/>
- 				</div>
 				<input name="email" class="w3-input w3-border w3-round" type=email placeholder="Adresse email" required></input><br/>
 				<input name="password" class="w3-input w3-border w3-round" type="password" placeholder="Mot de passe" required></input><br/>
 				<input name="company" class="w3-input w3-border w3-round" placeholder="Nom de l'entreprise" required></input><br/>
@@ -88,8 +84,8 @@
 <script>
 	document.getElementById("signinForm").hidden = <%=auth%>;
 	document.getElementById("loginForm").hidden = !document.getElementById("signinForm").hidden;
-	document.getElementById("signinForm").onsubmit = register
-	document.getElementById("loginForm").onsubmit = login
+	document.getElementById("signinForm").onsubmit = register;
+	document.getElementById("loginForm").onsubmit = login;
 	function login(e) {
 		e.preventDefault()
 		let form = new FormData(document.getElementById("loginForm"))

@@ -46,58 +46,6 @@ function logInUser()
 	xmlHttp.send(body);
 }
 
-function setMaxDate()
-{
-	var date = new Date();
-	date.setFullYear(date.getFullYear() - 18);
-	document.getElementById("birthdate").max = date.getFullYear()+ "-" + date.getMonth() + "-" + date.getDate();
-}
-
-function setBirthdate()
-{
-	var birthdate = new Date(document.getElementById("birthdate").value);
-	var mois = birthdate.getMonth();
-	switch (mois) {
-		case 0:
-			mois = "Janvier"
-			break;
-		case 1:
-			mois = "Fevrier"
-			break;
-		case 2:
-			mois = "Mars"
-			break;
-		case 3:
-			mois = "Avril"
-			break
-		case 4:
-			mois = "Mai"
-			break;
-		case 5:
-			mois = "Juin"
-			break;
-		case 6:
-			mois = "Juillet"
-			break;
-		case 7:
-			mois = "Août"
-			break;
-		case 8:
-			mois = "Septembre"
-			break;
-		case 9:
-			mois = "Octobre"
-			break;
-		case 10:
-			mois = "Novembre"
-			break;
-		case 11:
-			mois = "Décembre"
-			break;
-	}
-	document.getElementById("visualDate").value = birthdate.getDate() + " " + mois + " " + birthdate.getFullYear();
-}
-
 function moveImg(val) {
 		var page = "https://front-gestionnaire-web.herokuapp.com";
 		imgObj = document.getElementById('img');
