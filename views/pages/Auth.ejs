@@ -29,10 +29,7 @@
 			</div>
 
 			<div class="canvas-footer">
-				<button class="summit-button" onclick="signInUser();">
-					S'inscrire maintenant
-				</button>
-
+				<input type="button" class="summit-button" onclick="signInUser();" value="S'inscrire maintenant">
 				<hr class="hr">
 			</div>
 		</form>
@@ -62,15 +59,13 @@
 				</div>
 
 				<div class="canvas-footer">
-					<button class="summit-button" onclick="logInUser();">
+					<input type=submit class="summit-button" onclick="logInUser();">
 						Se connecter
-					</button>
+					</input>
 
 					<hr class="hr">
 				</div>
 				<div class="winPlace">
-					<br/>
-					<br/>
 					<br/>
 					<br/>
 					<br/>
@@ -86,24 +81,24 @@
 	document.getElementById("loginForm").hidden = !document.getElementById("signinForm").hidden;
 	document.getElementById("signinForm").onsubmit = register;
 	document.getElementById("loginForm").onsubmit = login;
-	function login(e) {
-		e.preventDefault()
-		let form = new FormData(document.getElementById("loginForm"))
-		let dict = {}
-		for (let pair of form.entries()) {
-			dict[pair[0]] = pair[1];
-		}
-		/** place fetch here */
-	}
-	function register(e) {
-		e.preventDefault()
-		let form = new FormData(document.getElementById("signinForm"))
-		let dict = {}
-		for (let pair of form.entries()) {
-			dict[pair[0]] = pair[1];
-		}
-		/** place fetch here */
-	}
+	// function login(e) {
+	// 	e.preventDefault()
+	// 	let form = new FormData(document.getElementById("loginForm"))
+	// 	let dict = {}
+	// 	for (let pair of form.entries()) {
+	// 		dict[pair[0]] = pair[1];
+	// 	}
+	// 	/** place fetch here */
+	// }
+	// function register(e) {
+	// 	e.preventDefault()
+	// 	let form = new FormData(document.getElementById("signinForm"))
+	// 	let dict = {}
+	// 	for (let pair of form.entries()) {
+	// 		dict[pair[0]] = pair[1];
+	// 	}
+	// 	/** place fetch here */
+	// }
 </script>
 
 </html>
