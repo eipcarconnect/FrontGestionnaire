@@ -22,4 +22,21 @@ function generate() {
     }
 }
 
+function getCompanyVehicules()
+{
+		var token = store.get('token');
+		var form = document.getElementById("loginForm");
+		fetch("http://40.85.113.74:3000/data/manager/getvehicles", {
+				method: "POST",
+				body: JSON.stringify({
+					token: token,
+				}),
+				headers: {
+						"Content-type": "application/json; charset=UTF-8"
+				}
+		})
+		.then(response => response.json())
+		.then(json => console.log());
+}
+
 generate()

@@ -1,26 +1,26 @@
-api_url = "40.85.113.74:3000/"
-
 function signInUser()
 {
+	var token;
 	var form = document.getElementById("signinForm");
-		fetch("http://40.85.113.74:3000/auth/manager/signup", {
-		    method: "POST",
-		    body: JSON.stringify({
-					name: form.name.value,
-					email: form.email.value,
-					password: form.password.value,
-					company: form.company.value
-		    }),
-		    headers: {
-		        "Content-type": "application/json; charset=UTF-8"
-		    }
-		})
-		.then(response => response.json())
-		.then(json => console.log(json));
+	fetch("http://40.85.113.74:3000/auth/manager/signup", {
+	    method: "POST",
+	    body: JSON.stringify({
+				name: form.name.value,
+				email: form.email.value,
+				password: form.password.value,
+				company: form.company.value
+	    }),
+	    headers: {
+	        "Content-type": "application/json; charset=UTF-8"
+	    }
+	})
+	.then(response => response.json())
+	.then(json => localStorage.setItem('token', json.token));
 }
 
 function logInUser()
 {
+	var token;
 	var form = document.getElementById("loginForm");
 	fetch("http://40.85.113.74:3000/auth/manager/signin", {
 			method: "POST",
@@ -33,7 +33,7 @@ function logInUser()
 			}
 	})
 	.then(response => response.json())
-	.then(json => console.log(json));
+	.then(json => localStorage.setItem('token', json.token));
 }
 
 function moveImg(val) {
@@ -58,3 +58,9 @@ function moveImg(val) {
 		}
 		history.pushState({id: 'authpage'}, 'Authentification', page);
 }
+//
+// async function isLogged() {
+// 	var token = store.get('token');
+// 		if (token != false)
+// 			document.location.href="/";
+// }
