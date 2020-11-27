@@ -41,6 +41,10 @@ app.get('/contact', function(req, res){
     res.sendFile('./public/html/Contact.html', {root: __dirname});
 });
 
+app.get('/public/js/auth.js', function(req, res){
+    res.sendFile('./public/js/auth.js', {root: __dirname});
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 });

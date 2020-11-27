@@ -73,11 +73,12 @@
 
 </body>
 
+<script src="public/js/auth.js"></script>
 <script>
 	document.getElementById("signinForm").hidden = <%=auth%>;
 	document.getElementById("loginForm").hidden = !document.getElementById("signinForm").hidden;
-	document.getElementById("signinForm").onsubmit = register;
-	document.getElementById("loginForm").onsubmit = login;
+	document.getElementById("signinForm").onsubmit = signInUser;
+	document.getElementById("loginForm").onsubmit = logInUser;
 	// isLogged();
 </script>
 

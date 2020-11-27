@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 100%; height: 100%">
 <head>
     <link rel="stylesheet" href="../css/index.css">
     <meta charset="utf-8"/>
 	<title>Index</title>
 </head>
 
-<body>
+<body style="width: 100%; height: 100%">
 
-<div class="App">
+<div class="App" style="width: 100%; height: 100%; display: flex; flex-direction: row">
     <div class="Drawer">
         <div class="DHeader">
             <img id="logo" src="../assets/CarConnect.png" height={100}/>
@@ -26,14 +26,6 @@
     <div class="Content">
 			<input type=button onclick="getCompanyVehicules()" value="GetVehicules">
         <table>
-            <thead>
-                <tr>
-                    <th>Immatriculation</th>
-                    <th>Kilometrage</th>
-                    <th>Niveau Essence (%)</th>
-                    <th>Niveau Batterie (%)</th>
-                </tr>
-            </thead>
             <tbody id="table_content">
             </tbody>
         </table>
@@ -41,5 +33,31 @@
 </div>
 
 </body>
+<script>
+
+    /*generate()
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function generate() {
+        let content = document.getElementById("table_content")
+        console.log("allé")
+        for(let i = 0; i < 30; ++i) {
+            let imatriculation = "" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25)) + "-" + getRandomInt(999).toString() + "-" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25))
+            let dist = getRandomInt(100000)
+            let fuel = getRandomInt(100)
+            let elec = getRandomInt(100)
+            content.innerHTML +=    "<tr>" +
+                "<td>"+imatriculation+"</td>" +
+                "<td style=\"text-align:right\">"+dist.toString()+"</td>" +
+                "<td style=\"text-align:right\">"+fuel.toString()+"</td>" +
+                "<td style=\"text-align:right\">"+elec.toString()+"</td>" +
+                "</tr>"
+        }
+    }*/
+
+</script>
 <script src="../js/index.js"></script>
 </html>
