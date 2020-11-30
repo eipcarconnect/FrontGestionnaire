@@ -6,24 +6,22 @@
 	<title>Index</title>
 </head>
 
-<body style="width: 100%; height: 100%">
+<body>
 
-<div class="App" style="width: 100%; height: 100%; display: flex; flex-direction: row">
+<div class="App">
     <div class="Drawer">
         <div class="DHeader">
             <img id="logo" src="../assets/CarConnect.png" height={100}/>
-            <div class="DHeaderInfos">
-                <p>Entreprise</p>
-                <p>42 Véhicules</p>
-            </div>
         </div>
         <div class="DOptions">
-						<a href="/vehicules">Vehicules</a>
-						<a href="/factures">Factures</a>
-						<a href="/trajets">Trajets</a>
+						<a href="/vehicules">Vehicules</a><br/>
+						<a href="/factures">Factures</a><br/>
+						<a href="/trajets">Trajets</a><br/>
         </div>
     </div>
     <div class="Content">
+			<h2 id="company">Entreprise</h2><br/>
+			<p id="nbCars">0 véhicule</p><br/>
 			<input type=button onclick="getCompanyVehicules()" value="GetVehicules">
         <table>
             <tbody id="table_content">

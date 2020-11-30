@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extend:true}));
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.sendFile('./public/html/index.html', {root: __dirname});
 });
 

@@ -1,26 +1,6 @@
-// setTimeout(function(){
-//     window.location.reload(1);
-// }, 5000);
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
-
-// function generate() {
-//     let content = document.getElementById("table_content")
-//     for(let i = 0; i < 30; ++i) {
-//         let imatriculation = "" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25)) + "-" + getRandomInt(999).toString() + "-" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25))
-//         let dist = getRandomInt(100000)
-//         let fuel = getRandomInt(100)
-//         let elec = getRandomInt(100)
-//         content.innerHTML +=    "<tr>" +
-//             "<td>"+imatriculation+"</td>" +
-//             "<td>"+dist.toString()+"</td>" +
-//             "<td>"+fuel.toString()+"</td>" +
-//             "<td>"+elec.toString()+"</td>" +
-//             "</tr>"
-//     }
-// }
 
 function getCompanyVehicules()
 {
@@ -38,9 +18,10 @@ function getCompanyVehicules()
 		.then(response => response.json())
 		.then(json => {
 			console.log(json)
+			document.getElementById("company").innerHTML = json["vehicles"][0]["company"];
+			document.getElementById("nbCars").innerHTML = json["vehicles"].length + "véhicule";
 			let content = document.getElementById("table_content")
 			content.innerHTML = "<tr>" +
-				"                <th>Compangnie</th>" +
 				"                <th>Vitesse</th>" +
 				"                <th>Model</th>" +
 				"                <th>Température moteur</th>" +
@@ -50,8 +31,7 @@ function getCompanyVehicules()
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
 				content.innerHTML +=    "<tr>" +
-					"<td>"+e["company"]+"</td>" +
-					"<td>"+e["speed"]+"</td>" +
+					"<td>"+e["speed"]+" kms/h</td>" +
 					"<td>"+e["model"]+"</td>" +
 					"<td style='justify-self: end'>"+e["tempEngine"]+"°C</td>" +
 					"<td>"+e["tempCoolant"]+"°C</td>" +
@@ -61,4 +41,4 @@ function getCompanyVehicules()
 		});
 }
 
-// generate();
+getCompanyVehicules();
