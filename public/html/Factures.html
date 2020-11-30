@@ -2,30 +2,86 @@
 <html>
 <head>
 	<title>Factures</title>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="https://jspdf.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://jspdf.plugin.autotable.min.js"></script>
+	<script src="../js/export.js"></script>
+	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
 </head>
 
 <body>
 
-	<div className="App">
-			<div className="Drawer">
-					<div className="DHeader">
-							<img id="logo" src={logo} height={100}/>
-							<div className="HeaderInfos">
-									<p>USER</p>
-									<p>USER NAME</p>
-									<p>NB VEHICULE</p>
-							</div>
-					</div>
-					<div className="DrawerOptions">
-							<p onClick={()=>setPage("Vehicules")}>Vehicules</p>
-							<p onClick={()=>setPage("Map")}>Map</p>
-							<p onClick={()=>setPage("Factures")}>Factures</p>
-					</div>
-			</div>
-			<div className="Content">
-					{content}
-			</div>
+	<div class="App">
+	    <div class="Drawer">
+	        <div class="DHeader">
+	            <img id="logo" src="../assets/CarConnect.png" height={100}/>
+	            <div class="DHeaderInfos">
+	                <p>Entreprise</p>
+	                <p>42 Véhicules</p>
+	            </div>
+	        </div>
+	        <div class="DOptions">
+							<a href="/vehicules">Vehicules</a>
+							<a href="/factures">Factures</a>
+							<a href="/trajets">Trajets</a>
+	        </div>
+	    </div>
 	</div>
 
+<br/>
+<br/>
+	<div>
+		<button id="downloadLinkExcel" onclick="exportTableToExcel('example', 'test')">Export to excel</button>
+		<button id="downloadLinkPDF">Export to pdf</button>
+		<button id="downloadLinkExcel" onclick="exportTableToCSV('test')">Export to CSV</button>
+		<table id="example" class="display" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>Name</th>
+										<th>Age</th>
+		                <th>Office</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr>
+		                <td>Lael Greer</td>
+										<td>21</td>
+		                <td>London</td>
+		            </tr>
+		            <tr>
+		                <td>Jonas Alexander</td>
+										<td>30</td>
+		                <td>San Francisco</td>
+		            </tr>
+		            <tr>
+		                <td>Shad Decker</td>
+										<td>51</td>
+		                <td>Edinburgh</td>
+		            </tr>
+		            <tr>
+		                <td>Michael Bruce</td>
+										<td>29</td>
+		                <td>Singapore</td>
+		            </tr>
+		            <tr>
+		                <td>Donna Snider</td>
+										<td>27</td>
+		                <td>New York</td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
 </body>
+
+<script>
+
+function exportTableToPDF(tableID, filename='table') {
+  var doc = new jsPDF();
+  doc.autoTable({ html: '#'+tableID });
+  doc.save(filename+'.pdf');
+}
+</script>
+
 </html>
