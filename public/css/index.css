@@ -21,18 +21,35 @@ code {
     monospace;
 }
 
-#profile-picture {
-	height:30px;
-	border-radius: 50%;
-	border: 1px solid blue;
-}
-
 .App {
   width: 100%;
   height: 100%;
   background-color: #1E1E1E;
   display: flex;
 }
+
+/* ----- Profile infos on the right*/
+
+.ManagerInfos {
+	position: absolute;
+	padding-top: 15px;
+	left: 87%;
+	justify-content: center;
+	display: flex;
+}
+
+.profile-picture {
+	height:30px;
+	border-radius: 50%;
+	border: 1px solid blue;
+}
+
+.ManagerName {
+	margin-left: 3px;
+	padding-top: 2px;
+}
+
+/* ----- Sidebar on the left */
 
 .Drawer {
   background-color: #2c84cc;
@@ -56,6 +73,14 @@ code {
   height: 100px;
 }
 
+.logo-connect {
+	width: 30%;
+	height: 30%;
+	border-radius: 50%;
+}
+
+/* ----- */
+
 /* .DOptions p {
   color: white;
   margin: 4px 0;
@@ -68,15 +93,12 @@ code {
 } */
 
 .Content {
+	color: white;
   display: flex;
   /* flex: 1; */
   height: 100%;
   /* justify-content: center; */
   /* align-items: center; */
-}
-
-.Content p {
-  color: white;
 }
 
 thead, tbody { display: block; }
@@ -87,20 +109,10 @@ thead, tbody { display: block; }
   overflow-x: hidden;  /* Hide the horizontal scroll */
 }
 
-.submit-form-butt {
-    --background: #069c24;
-}
-
-hr {
+/* hr {
 	height: 2px;
 	color: #069c24;
 	background-color: #069c24;
 	width: 75%;
 	border: none;
-}
-
-.logo-connect {
-	width: 30%;
-	height: 30%;
-	border-radius: 50%;
-}
+} */

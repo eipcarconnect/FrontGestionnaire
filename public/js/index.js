@@ -18,15 +18,15 @@ function getCompanyVehicules()
 		.then(json => {
 			console.log(json)
 			document.getElementById("company").innerHTML = json["vehicles"][0]["company"];
-			document.getElementById("nbCars").innerHTML = json["vehicles"].length + "véhicule";
+			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
 			let content = document.getElementById("table_content")
-			content.innerHTML = "<tr>" +
-				"                <th>Vitesse</th>" +
-				"                <th>Model</th>" +
-				"                <th>Température moteur</th>" +
-				"                <th>Température liquide de refroidissement</th>" +
-				"                <th>À l'arrêt</th>" +
-				"            </tr>"
+			// content.innerHTML = "<tr>" +
+			// 	"                <th>Vitesse</th>" +
+			// 	"                <th>Model</th>" +
+			// 	"                <th>Température moteur</th>" +
+			// 	"                <th>Température liquide de refroidissement</th>" +
+			// 	"                <th>À l'arrêt</th>" +
+			// 	"            </tr>"
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
 				let tmp =  "<tr>" +
@@ -38,7 +38,7 @@ function getCompanyVehicules()
 					if (e["breakPressed"])
 						tmp += "checked=true";
 					tmp += "></td></tr>";
-					content.innerHTML += tmp;
+					content.innerHTML = tmp;
 			})
 		});
 }
@@ -56,7 +56,10 @@ function getManagerInfos()
 			}
 	})
 	.then(response => response.json())
-	.then(json => {console.log(json)});
+	.then(json => {
+		console.log(json)
+		document.getElementById("ManagerName").innerHTML = "<u>" + json.name + "</u>";
+	});
 }
 
 function logout()
