@@ -36,7 +36,29 @@ function getCompanyVehicules()
 				}
 		})
 		.then(response => response.json())
-		.then(json => console.log(json));
+		.then(json => {
+			console.log(json)
+			let content = document.getElementById("table_content")
+			content.innerHTML = "<tr>" +
+				"                <th>Compangnie</th>" +
+				"                <th>Vitesse</th>" +
+				"                <th>Model</th>" +
+				"                <th>Température moteur</th>" +
+				"                <th>Température liquide de refroidissement</th>" +
+				"                <th>À l'arrêt</th>" +
+				"            </tr>"
+			json["vehicles"].forEach((e,i)=>{
+				console.log(e)
+				content.innerHTML +=    "<tr>" +
+					"<td>"+e["company"]+"</td>" +
+					"<td>"+e["speed"]+"</td>" +
+					"<td>"+e["model"]+"</td>" +
+					"<td style='justify-self: end'>"+e["tempEngine"]+"°C</td>" +
+					"<td>"+e["tempCoolant"]+"°C</td>" +
+					"<td>"+e["breakPressed"]+"</td>" +
+					"</tr>"
+			})
+		});
 }
 
 // generate();
