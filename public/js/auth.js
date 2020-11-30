@@ -58,9 +58,20 @@ function moveImg(val) {
 		}
 		history.pushState({id: 'authpage'}, 'Authentification', page);
 }
-//
-// async function isLogged() {
-// 	var token = store.get('token');
-// 		if (token != false)
-// 			document.location.href="/";
+
+
+function logout()
+{
+	localStorage.setItem('token', "");
+}
+
+// function isLogged() {
+// 		var wait = false;
+// 		var token = localStorage.getItem('token');
+// 		if ((!token || token == "") && wait == false) {
+// 			document.location.href="/login";
+// 			wait = true;
+// 		}
 // }
+
+// isLogged();

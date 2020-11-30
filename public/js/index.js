@@ -29,12 +29,12 @@ function getCompanyVehicules()
 			// 	"            </tr>"
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
-				let tmp =  "<tr>" +
-					"<td>"+e["speed"]+" kms/h</td>" +
-					"<td>"+e["model"]+"</td>" +
-					"<td style='justify-self: end'>"+e["tempEngine"]+"°C</td>" +
-					"<td>"+e["tempCoolant"]+"°C</td>" +
-					"<td><input type=checkbox";
+				let tmp =  "<tr scope='row'>" +
+					"<td scope='col'>"+e["speed"]+" kms/h</td>" +
+					"<td scope='col'>"+e["model"]+"</td>" +
+					"<td style='justify-self: end' scope='col'>"+e["tempEngine"]+"°C</td>" +
+					"<td scope='col'>"+e["tempCoolant"]+"°C</td>" +
+					"<td scope='col'><input type=checkbox";
 					if (e["breakPressed"])
 						tmp += "checked=true";
 					tmp += "></td></tr>";

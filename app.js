@@ -14,7 +14,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/index', function(req, res){
-    res.render('pages/Index');
+	res.sendFile('./public/html/index.html', {root: __dirname});
+});
+
+app.get('/vehicules', function(req, res){
+	res.sendFile('./public/html/index.html', {root: __dirname});
 });
 
 app.get('/login', function(req, res){
@@ -31,10 +35,6 @@ app.get('/factures', function(req, res){
 
 app.get('/trajets', function(req, res){
     res.sendFile('./public/html/Trajets.html', {root: __dirname});
-});
-
-app.get('/vehicules', function(req, res){
-    res.sendFile('./public/html/Vehicules.html', {root: __dirname});
 });
 
 app.get('/contact', function(req, res){

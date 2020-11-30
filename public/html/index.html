@@ -3,8 +3,15 @@
 <head>
     <link rel="stylesheet" href="../css/index.css">
     <meta charset="utf-8"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<title>Index</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		 <script src="https://jspdf.min.js"></script>
+	 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	 	<script src="https://jspdf.plugin.autotable.min.js"></script>
+	 	<script src="../js/export.js"></script>
+	 	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+	 	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
+		<title>Véhicules</title>
 </head>
 
 <body>
@@ -15,10 +22,10 @@
             <img id="logo" src="../assets/CarConnect.png" height={100}/>
         </div>
         <div class="DOptions">
-						<a href="/vehicules">Vehicules</a><br/>
-						<a href="/factures">Factures</a><br/>
+						<a href="/vehicules">Véhicules</a><br/>
 						<a href="/trajets">Trajets</a><br/>
-						<button onclick="logout();">Logout</button><br/>
+						<a href="/factures">Factures</a><br/>
+						<button class="logout" onclick="logout();">Logout</button><br/>
         </div>
     </div>
     <div class="Content">
@@ -29,15 +36,17 @@
 			<div id="PageContent">
 				<h2 id="company">Entreprise</h2><br/>
 				<p id="nbCars">0 véhicule</p><br/>
-				<input type=button onclick="getCompanyVehicules()" value="GetVehicules">
+				<button id="downloadLinkExcel" onclick="exportTableToExcel('example', 'test')">Export to excel</button>
+				<button id="downloadLinkPDF">Export to pdf</button>
+				<button id="downloadLinkExcel" onclick="exportTableToCSV('test')">Export to CSV</button>
 	        <table class="table">
 						<thead>
 							<tr>
-								<th>Vitesse</th>
-							  <th>Model</th>
-							  <th>Température moteur</th>
-							  <th>Température liquide de refroidissement</th>
-							  <th>À l'arrêt</th>
+								<th scope="col">Vitesse</th>
+							  <th scope="col">Model</th>
+							  <th scope="col">Température moteur</th>
+							  <th scope="col">Température liquide de refroidissement</th>
+							  <th scope="col">À l'arrêt</th>
 							</tr>
 						</thead>
 	          <tbody id="table_content">
@@ -49,4 +58,5 @@
 
 </body>
 <script src="../js/index.js"></script>
+<script src="../js/auth.js"></script>
 </html>
