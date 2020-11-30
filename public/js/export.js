@@ -72,45 +72,40 @@ function exportTableToCSV(filename) {
     downloadCSV(csv.join("\n"), filename);
 }
 
-jQuery(function ($) {
-		 $("#downloadLinkPDF").click(function () {
-				 var dataSource = shield.DataSource.create({
-						 data: "#example",
-						 schema: {
-								 type: "table",
-								 fields: {
-										 Name: { type: String },
-										 Age: { type: Number },
-										 Office: { type: String }
-								 }
-						 }
-				 });
+ function exportTableToPDF(tableID, filename='table') {
 
-				 dataSource.read().then(function (data) {
-						 var pdf = new shield.exp.PDFDocument({
-								 author: "Devnote",
-								 created: new Date()
-						 });
-						 pdf.addPage("a4", "portrait");
-						 pdf.table(
-								 50,
-								 50,
-								 data,
-								 [
-										 { field: "Name", title: "Name", width: 200 },
-										 { field: "Age", title: "Age", width: 50 },
-										 { field: "Office", title: "Office", width: 200 }
-								 ],
-								 {
-										 margins: {
-												 top: 50,
-												 left: 50
-										 }
-								 }
-						 );
-						 pdf.saveAs({
-								 fileName: "exportToPdf"
-						 });
-				 });
-		 });
- });
+	 // html2canvas(document.getElementById(tableID), {
+	 //                onrendered: function (canvas) {
+	 //                    var data = document.getElementById(tableID);
+	 //                    var docDefinition = {
+	 //                        content: [{
+	 //                            image: data,
+	 //                            width: 500
+	 //                        }]
+	 //                    };
+	 //                    pdfMake.createPdf(docDefinition).download(filename + ".pdf");
+	 //                }
+	 //            });
+  var doc = new jsPDF('p', 'pt', 'a4');
+
+  var source = document.getElementById(tableID).innerHTML;
+
+  var margins = {
+    top: 10,
+    bottom: 10,
+    left: 10,
+    width: 595
+  };
+
+  doc.fromHTML(
+    source,
+    margins.left,
+    margins.top, {
+      'width': margins.width,
+      'elementHandlers': specialElementHandlers
+    },
+
+    function(dispose) {
+      doc.save(filename);
+    }, margins);
+}
