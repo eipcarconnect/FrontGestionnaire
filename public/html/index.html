@@ -17,45 +17,26 @@
 						<a href="/vehicules">Vehicules</a><br/>
 						<a href="/factures">Factures</a><br/>
 						<a href="/trajets">Trajets</a><br/>
+						<button onclick="logout();">Logout</button><br/>
         </div>
     </div>
     <div class="Content">
-			<h2 id="company">Entreprise</h2><br/>
-			<p id="nbCars">0 véhicule</p><br/>
-			<input type=button onclick="getCompanyVehicules()" value="GetVehicules">
-        <table>
-            <tbody id="table_content">
-            </tbody>
-        </table>
-    </div>
+			<div id="ManagerInfos" >
+					<img id="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
+					<p></p>
+			</div>
+			<div id="PageContent">
+				<h2 id="company">Entreprise</h2><br/>
+				<p id="nbCars">0 véhicule</p><br/>
+				<input type=button onclick="getCompanyVehicules()" value="GetVehicules">
+	        <table>
+	            <tbody id="table_content">
+	            </tbody>
+	        </table>
+	    </div>
+		</div>
 </div>
 
 </body>
-<script>
-
-    /*generate()
-
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-    }
-
-    function generate() {
-        let content = document.getElementById("table_content")
-        console.log("allé")
-        for(let i = 0; i < 30; ++i) {
-            let imatriculation = "" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25)) + "-" + getRandomInt(999).toString() + "-" + String.fromCharCode(65 + getRandomInt(25)) + String.fromCharCode(65 + getRandomInt(25))
-            let dist = getRandomInt(100000)
-            let fuel = getRandomInt(100)
-            let elec = getRandomInt(100)
-            content.innerHTML +=    "<tr>" +
-                "<td>"+imatriculation+"</td>" +
-                "<td style=\"text-align:right\">"+dist.toString()+"</td>" +
-                "<td style=\"text-align:right\">"+fuel.toString()+"</td>" +
-                "<td style=\"text-align:right\">"+elec.toString()+"</td>" +
-                "</tr>"
-        }
-    }*/
-
-</script>
 <script src="../js/index.js"></script>
 </html>

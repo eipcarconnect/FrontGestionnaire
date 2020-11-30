@@ -5,7 +5,6 @@ function getRandomInt(max) {
 function getCompanyVehicules()
 {
 		var token = localStorage.getItem('token');
-		var form = document.getElementById("loginForm");
 		fetch("http://40.85.113.74:3000/data/manager/getvehicles", {
 				method: "POST",
 				body: JSON.stringify({
@@ -30,15 +29,40 @@ function getCompanyVehicules()
 				"            </tr>"
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
-				content.innerHTML +=    "<tr>" +
+				let tmp =  "<tr>" +
 					"<td>"+e["speed"]+" kms/h</td>" +
 					"<td>"+e["model"]+"</td>" +
 					"<td style='justify-self: end'>"+e["tempEngine"]+"°C</td>" +
 					"<td>"+e["tempCoolant"]+"°C</td>" +
-					"<td>"+e["breakPressed"]+"</td>" +
-					"</tr>"
+					"<td><input type=checkbox";
+					if (e["breakPressed"])
+						tmp += "checked=true";
+					tmp += "></td></tr>";
+					content.innerHTML += tmp;
 			})
 		});
 }
 
+function getManagerInfos()
+{
+	var token = localStorage.getItem('token');
+	fetch("http://40.85.113.74:3000/auth/manager/getinfo", {
+			method: "POST",
+			body: JSON.stringify({
+				token: token,
+			}),
+			headers: {
+					"Content-type": "application/json; charset=UTF-8"
+			}
+	})
+	.then(response => response.json())
+	.then(json => {console.log(json)});
+}
+
+function logout()
+{
+	localStorage.setItem('token', "");
+}
+
+getManagerInfos();
 getCompanyVehicules();
