@@ -1,37 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 100%; height: 100%">
 <head>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="../css/index.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<title>Factures</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <meta charset="utf-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	 	<!-- <script src="https://jspdf.plugin.autotable.min.js"></script> -->
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	 	<script src="../js/factures.js"></script>
+		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script> -->
+	  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+
+		<title>Véhicules</title>
 </head>
 
 <body>
 
-	<div class="App">
-		<div class="Drawer">
-			<div class="DHeader">
-					<img id="logo" src="../assets/CarConnect.png" height={100}/>
+<div class="App">
+    <div class="Drawer">
+        <div class="DHeader">
+            <img id="logo" src="../assets/CarConnect.png" height={100}/><br/>
+						<b><u><p id="company">Entreprise</p></u></b><br/>
+        </div>
+        <div class="DOptions">
+						<a href="/vehicules">Véhicules</a><br/>
+						<a href="/trajets">Trajets</a><br/>
+						<a href="/factures">Factures</a><br/>
+						<a href="/contact">Nous contacter</a><br/>
+						<button class="logout" onclick="logout();">Logout</button><br/>
+        </div>
+    </div>
+    <div class="Content">
+			<div class="ManagerInfos">
+					<img class="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
+					<p id="ManagerName" class="ManagerName">Nom</p>
 			</div>
-			<div class="DOptions">
-					<a href="/vehicules">Véhicules</a><br/>
-					<a href="/factures">Factures</a><br/>
-					<a href="/trajets">Trajets</a><br/>
+			<div id="PageContent">
+				<h1 id="nbCars">0 véhicule</h1>
+				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button><br/>
+				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')">Export to excel</button>
+				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')">Export to pdf</button>
+				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')">Export to CSV</button>
+	        <table class="table" id="trajets">
+	          <tbody id="table_content">
+	          </tbody>
+	        </table>
+	    </div>
+		</div>
+</div>
+
+<div id="addVehiculeModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Ajouter véhicule</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form id="addVehiculeForm">
+						<input name="model" class="w3-input w3-border w3-round" placeholder="Modèle de la voiture" required></input><br/>
+						<input name="plate" class="w3-input w3-border w3-round" placeholder="Plaque d'immatriculation" required></input><br/>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<input type="button" class="btn btn-default" onclick="addVehicule();" value="Ajouter à la flotte">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
+
 	</div>
+</div>
 
 </body>
-
-<script>
-
-function exportTableToPDF(tableID, filename='table') {
-  var doc = new jsPDF();
-  doc.autoTable({ html: '#'+tableID });
-  doc.save(filename+'.pdf');
-}
-</script>
-
+<script src="../js/index.js"></script>
+<script src="../js/auth.js"></script>
 </html>

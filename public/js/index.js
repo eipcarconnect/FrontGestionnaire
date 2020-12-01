@@ -20,16 +20,10 @@ function getCompanyVehicules()
 			document.getElementById("company").innerHTML = json["vehicles"][0]["company"];
 			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
 			let content = document.getElementById("table_content")
-			// content.innerHTML = "<tr>" +
-			// 	"                <th>Vitesse</th>" +
-			// 	"                <th>Model</th>" +
-			// 	"                <th>Température moteur</th>" +
-			// 	"                <th>Température liquide de refroidissement</th>" +
-			// 	"                <th>À l'arrêt</th>" +
-			// 	"            </tr>"
+			let tmp = "";
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
-				let tmp =  "<tr scope='row'>" +
+				tmp +=  "<tr scope='row'>" +
 					"<td scope='col'>"+e["speed"]+" kms/h</td>" +
 					"<td scope='col'>"+e["model"]+"</td>" +
 					"<td style='justify-self: end' scope='col'>"+e["tempEngine"]+"°C</td>" +
