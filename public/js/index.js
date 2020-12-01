@@ -20,7 +20,13 @@ function getCompanyVehicules()
 			document.getElementById("company").innerHTML = json["vehicles"][0]["company"];
 			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
 			let content = document.getElementById("table_content")
-			let tmp = "";
+			let tmp = "<tr>" +
+				"  <th scope='col'>Vitesse</th>" +
+				"  <th scope='col'>Modèle</th>" +
+				"  <th scope='col'>Température moteur</th>" +
+				"  <th scope='col'>Température liquide de refroidissement</th>" +
+				"  <th scope='col'>À l'arrêt</th>" +
+				"</tr>";
 			json["vehicles"].forEach((e,i)=>{
 				console.log(e)
 				tmp +=  "<tr scope='row'>" +
@@ -28,12 +34,12 @@ function getCompanyVehicules()
 					"<td scope='col'>"+e["model"]+"</td>" +
 					"<td style='justify-self: end' scope='col'>"+e["tempEngine"]+"°C</td>" +
 					"<td scope='col'>"+e["tempCoolant"]+"°C</td>" +
-					"<td scope='col'><input type=checkbox";
+					"<td scope='col'><input onclick=\"return false;\"/ type=checkbox";
 					if (e["breakPressed"])
 						tmp += "checked=true";
 					tmp += "></td></tr>";
-					content.innerHTML = tmp;
 			})
+			content.innerHTML = tmp;
 		});
 }
 

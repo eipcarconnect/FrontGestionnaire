@@ -110,12 +110,34 @@ code {
 	margin-left: 10%;
 }
 
-thead, tbody { display: block; }
+thead, tbody {
+  display: block;
+}
+th {
+  color: #2c84cc;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+td {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 table_content {
   height: 500px;       /* Just for the demo          */
   overflow-y: auto;    /* Trigger vertical scroll    */
   overflow-x: hidden;  /* Hide the horizontal scroll */
+
+  border-radius: 1px;
+  border-color: white;
+  border-style: solid;
+}
+.number_data {
+  text-align: right;
+}
+.header-table {
+  min-width: 150px;
 }
 
 /* hr {
