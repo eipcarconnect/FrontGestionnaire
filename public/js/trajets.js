@@ -13,12 +13,12 @@ function getCompanyRides()
 		.then(response => response.json())
 		.then(json => {
 			console.log(json)
+			let content = document.getElementById("trajets_content");
 			let tmp = "";
-			let content = document.getElementById("trajets_content")
-			json["trajets"].forEach((e,i)=>{
-				console.log(e)
+			json["rides"].forEach((e,i)=>{
+					console.log(e);
 					tmp +=  "<tr scope='row'>" +
-					"<td scope='col'>"+e["name"]"</td>" +
+					"<td scope='col'>"+e["name"]+"</td>" +
 					"<td scope='col'>"+e["vehicule"]+"</td>" +
 					"<td scope='col'>"+e["user"]+"</td>" +
 					"<td scope='col'>"+e["start"]+"</td>" +
