@@ -38,8 +38,9 @@ app.get('/signin', function(req, res){
 		res.render('pages/Auth', {auth: false});
 });
 
-app.get('/factures', function(req, res){
-    res.sendFile('./public/html/Factures.html', {root: __dirname});
+app.get('/factures/:id', function(req, res){
+		var id = req.params.id;
+		res.render('pages/Factures', {id: id});
 });
 
 app.get('/trajets', function(req, res){
@@ -50,6 +51,10 @@ app.get('/contact', function(req, res){
     res.sendFile('./public/html/Contact.html', {root: __dirname});
 });
 
+app.get('/users', function(req, res){
+    res.sendFile('./public/html/Users.html', {root: __dirname});
+});
+
 app.post('/contactus', function(req, res){
 		console.log(req.body);
 		sendMail(req.query.from, req.query.subject, req.query.content, req.name);
@@ -58,6 +63,10 @@ app.post('/contactus', function(req, res){
 
 app.get('/public/js/auth.js', function(req, res){
     res.sendFile('./public/js/auth.js', {root: __dirname});
+});
+
+app.get('/public/js/factures.js', function(req, res){
+    res.sendFile('./public/js/factures.js', {root: __dirname});
 });
 
 app.listen(port, () => {
