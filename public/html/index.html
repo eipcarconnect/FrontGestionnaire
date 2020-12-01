@@ -6,9 +6,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	 	<script src="https://jspdf.plugin.autotable.min.js"></script>
-	 	<script src="../js/export.js"></script>
+	 	<!-- <script src="https://jspdf.plugin.autotable.min.js"></script> -->
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	 	<script src="../js/export.js"></script>
+		<script src="../js/vehicules.js"></script>
 		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script> -->
 	  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
 
@@ -36,7 +38,8 @@
 					<p id="ManagerName" class="ManagerName">Nom</p>
 			</div>
 			<div id="PageContent">
-				<h1 id="nbCars">0 véhicule</h1><br/>
+				<h1 id="nbCars">0 véhicule</h1>
+				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button><br/>
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')">Export to excel</button>
 				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')">Export to pdf</button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')">Export to CSV</button>
@@ -55,6 +58,30 @@
 	        </table>
 	    </div>
 		</div>
+</div>
+
+<div id="addVehiculeModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Ajouter véhicule</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form id="addVehiculeForm">
+						<input name="model" class="w3-input w3-border w3-round" placeholder="Modèle de la voiture" required></input><br/>
+						<input name="plate" class="w3-input w3-border w3-round" placeholder="Plaque d'immatriculation" required></input><br/>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<input type="button" class="btn btn-default" onclick="addVehicule();" value="Ajouter à la flotte">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
 </div>
 
 </body>
