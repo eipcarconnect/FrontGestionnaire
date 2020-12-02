@@ -45,26 +45,30 @@ function exportTableToCSV(filename) {
     downloadCSV(csv.join("\n"), filename);
 }
 
- function exportTableToPDF(tableID, filename='table') {
-  var doc = new jsPDF('p', 'pt', 'a4');
+function exportTableToPDF(userID, filename) {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    source = $('#'+ userID)[0];
 
-  var source = document.getElementById(tableID);
-
-  var margins = {
-    top: 10,
-    bottom: 10,
-    left: 10,
-    width: 595
-  };
-
-  doc.fromHTML(
+    specialElementHandlers = {
+        '#bypassme': function (element, renderer) {
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+    pdf.fromHTML(
     source,
     margins.left,
     margins.top, {
-      'width': margins.width,
+        'width': margins.width,
+        'elementHandlers': specialElementHandlers
     },
 
-    function(dispose) {
-      doc.save(filename);
+    function (dispose) {
+        pdf.save(filename + '.pdf');
     }, margins);
 }

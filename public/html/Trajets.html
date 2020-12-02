@@ -43,23 +43,25 @@
 			<div id="PageContent">
 				<h1 id="nbRides">Trajets</h1>
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('trajets', 'Trajets')"><i class='fas fa-file-excel'></i></button>
-				<button id="downloadLinkPDF" onclick="exportTableToPDF('trajets', 'Trajets')"><i class='fas fa-file-pdf'></i></button>
+				<button id="downloadLinkPDF" onclick="exportTableToPDF('rideTable', 'Trajets')"><i class='fas fa-file-pdf'></i></button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('Trajets')"><i class='fas fa-file-csv'></i></button>
-				<table class="table" id="trajets">
-					<thead>
-						<tr>
-							<th scope="col">Nom</th>
-							<th scope="col">Véhicule</th>
-							<th scope="col">Employé</th>
-							<th scope="col">Début</th>
-							<th scope="col">Fin</th>
-							<th scope="col">Date</th>
-							<th scope="col">Lien Facture</th>
-						</tr>
-					</thead>
-					<tbody id="trajets_content">
-					</tbody>
-				</table>
+				<div id="rideTable">
+					<table class="table" id="trajets">
+						<thead>
+							<tr>
+								<th scope="col">Nom</th>
+								<th scope="col">Véhicule</th>
+								<th scope="col">Employé</th>
+								<th scope="col">Début</th>
+								<th scope="col">Fin</th>
+								<th scope="col">Date</th>
+								<th scope="col">Lien Facture</th>
+							</tr>
+						</thead>
+						<tbody id="trajets_content">
+						</tbody>
+					</table>
+				</div>
 	    </div>
 		</div>
 </div>

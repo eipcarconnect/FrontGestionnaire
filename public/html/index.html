@@ -45,7 +45,7 @@
 				<h1 id="nbCars">0 véhicule</h1>
 				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button>
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')"><i class='fas fa-file-excel'></i></button>
-				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')"><i class='fas fa-file-pdf'></i></button>
+				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehiculeTable', 'vehicules_list')"><i class='fas fa-file-pdf'></i></button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')"><i class='fas fa-file-csv'></i></button>
 				<input id="search" placeholder="Rechercher dans le Véhicules" type="text" onkeyup="getCompanyVehicules()">
 				<select id="sort-selection" onchange="getCompanyVehicules()">
@@ -57,10 +57,12 @@
 					<option>Kilometrage par ordre croissant</option>
 					<option>Kilometrage par ordre decroissant</option>
 				</select>
-				<table class="table" id="vehicules">
-				  <tbody id="table_content">
-				  </tbody>
-				</table>
+				<div id="vehiculeTable">
+					<table class="table" id="vehicules">
+					  <tbody id="table_content">
+					  </tbody>
+					</table>
+				</div>
 	    	</div>
 		</div>
 </div>
