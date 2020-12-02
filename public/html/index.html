@@ -44,6 +44,16 @@
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')">Export to excel</button>
 				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')">Export to pdf</button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')">Export to CSV</button>
+				<input id="search" placeholder="Rechercher dans le Véhicules" type="text" onkeyup="getCompanyVehicules()">
+				<select id="sort-selection" onchange="getCompanyVehicules()">
+					<option>Default</option>
+					<option>Immatriculation par ordre croissant</option>
+					<option>Immatriculation par ordre decroissant</option>
+					<option>Modele par ordre croissant</option>
+					<option>Modele par ordre decroissant</option>
+					<option>Kilometrage par ordre croissant</option>
+					<option>Kilometrage par ordre decroissant</option>
+				</select>
 				<table class="table" id="vehicules">
 				  <tbody id="table_content">
 				  </tbody>

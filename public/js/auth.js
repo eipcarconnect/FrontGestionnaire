@@ -33,7 +33,17 @@ function logInUser()
 			}
 	})
 	.then(response => response.json())
-	.then(json => localStorage.setItem('token', json.token));
+	.then(json => {
+		if (json.success) {
+			localStorage.setItem('token', json.token)
+			history.back()
+		} else {
+			if (json.error === "ManagerNotFound")
+				alert("Mauvais addresse email.")
+			else if (json.error === "WrongPassword")
+				alert("Mauvais mot de passe.")
+		}
+	});
 }
 
 function moveImg(val) {

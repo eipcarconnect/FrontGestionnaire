@@ -1,6 +1,3 @@
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
 
 function getCompanyVehicules()
 {
@@ -26,15 +23,52 @@ function getCompanyVehicules()
 				"  <th scope='col'>Kilométrage</th>" +
 				"  <th scope='col'>À l'arrêt</th>" +
 				"</tr>";
-			console.log(json)
+			let key = document.getElementById('search').value
+			let selection = document.getElementById('sort-selection').value
+
+			switch (selection) {
+				case "Immatriculation par ordre croissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["licencePlate"] < a["licencePlate"]
+					});
+					break;
+				case "Immatriculation par ordre decroissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["licencePlate"] > a["licencePlate"]
+					});
+					break;
+				case "Modele par ordre croissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["model"] < a["model"]
+					});
+					break;
+				case "Modele par ordre decroissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["model"] > a["model"]
+					});
+					break;
+				case "Kilometrage par ordre croissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["kilometer"] < a["kilometer"]
+					});
+					break;
+				case "Kilometrage par ordre decroissant":
+					json["vehicles"].sort(function(a,b) {
+						return b["kilometer"] > a["kilometer"]
+					});
+					break;
+				default:
+					break;
+			}
+
 			json["vehicles"].forEach((e,i)=>{
-				console.log(e)
-				tmp +=  "<tr scope='row'>" +
-					"<td scope='col'>"+e["licencePlate"]+"</td>" +
-					"<td scope='col'>"+e["model"]+"</td>" +
-					// "<td scope='col'>"+e["kilometrage"]+"°C</td>" +
-					"<td scope='col'>1000 km</td>" +
-					"<td scope='col'><input onclick=\"return false;\" type=checkbox "+(e["breakPressed"]?"checked":"")+"></td></tr>";
+				if (e["licencePlate"].includes(key) || e["model"].includes(key) )
+					tmp +=  "<tr scope='row'>" +
+						"<td scope='col'>"+e["licencePlate"]+"</td>" +
+						"<td scope='col'>"+e["model"]+"</td>" +
+						"<td scope='col'>"+e["kilometer"]+" km</td>" +
+						// "<td scope='col'>"+Math.ceil(Math.random()*10000).toString()+" km</td>" +
+						"<td scope='col'><input onclick=\"return false;\" type=checkbox "+(e["breakPressed"]?"checked":"")+"></td></tr>";
 			})
 			content.innerHTML = tmp;
 		});
