@@ -16,10 +16,10 @@ function getCompanyVehicules()
 			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
 			let content = document.getElementById("table_content")
 			let tmp = "<tr>" +
-				"  <th scope='col'>Immatriculation</th>" +
-				"  <th scope='col'>Modèle</th>" +
-				"  <th scope='col'>Kilométrage</th>" +
-				"  <th scope='col'>À l'arrêt</th>" +
+				"  <th scope='col' style='font-size: 20px'>Immatriculation</th>" +
+				"  <th scope='col' style='font-size: 20px'>Modèle</th>" +
+				"  <th scope='col' style='font-size: 20px'>Kilométrage</th>" +
+				"  <th scope='col' style='font-size: 20px'>À l'arrêt</th>" +
 				"</tr>";
 			let key = document.getElementById('search').value
 			let selection = document.getElementById('sort-selection').value
