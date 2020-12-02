@@ -32,7 +32,7 @@
 		</div>
 		<div class="DFooter">
 			<i style="margin-bottom: 8px"><a id="contact" href="/contact"><i class="fas fa-edit"></i> Nous contacter</a></i>
-			<button class="logout" onclick="logout();" style="display: block; width: 150px"><i class="fas fa-sign-out-alt"></i> Logout</button>
+			<button class="logout" onclick="logout();" style="display: block; width: 150px"><i class="fas fa-sign-out-alt"></i> Deconnexion</button>
 		</div>
 	</div>
   <div class="Content">
@@ -41,6 +41,7 @@
 				<p id="ManagerName" class="ManagerName">Nom</p>
 		</div>
 		<div id="PageContent">
+			<h1 id="nbUsers">Users</h1>
 			<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')"><i class='fas fa-file-excel'></i></button>
 			<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')"><i class='fas fa-file-pdf'></i></button>
 			<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')"><i class='fas fa-file-csv'></i></button>
