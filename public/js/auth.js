@@ -2,7 +2,7 @@ function signInUser()
 {
 	var token;
 	var form = document.getElementById("signinForm");
-	fetch("http://40.85.113.74:3000/auth/manager/signup", {
+	fetch("https://40.85.113.74:3000/auth/manager/signup", {
 	    method: "POST",
 	    body: JSON.stringify({
 				name: form.name.value,
@@ -22,7 +22,7 @@ function logInUser()
 {
 	var token;
 	var form = document.getElementById("loginForm");
-	fetch("http://40.85.113.74:3000/auth/manager/signin", {
+	fetch("https://40.85.113.74:3000/auth/manager/signin", {
 			method: "POST",
 			body: JSON.stringify({
 				email: form.email.value,
