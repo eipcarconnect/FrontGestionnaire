@@ -42,6 +42,14 @@
 			<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')"><i class='fas fa-file-excel'></i></button>
 			<button id="downloadLinkPDF" class="pdf" onclick="exportTableToPDF('userTable', 'Employés')"><i class='fas fa-file-pdf'></i></button>
 			<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')"><i class='fas fa-file-csv'></i></button>
+			<input id="search-user" placeholder="Rechercher parmis les utilisateurs" type="text" onkeyup="getUsers()">
+			<select id="sort-selection-user" onchange="getUsers()">
+				<option>Default</option>
+				<option>Nom par ordre croissant</option>
+				<option>Nom par ordre decroissant</option>
+				<option>Email par ordre croissant</option>
+				<option>Email par ordre decroissant</option>
+			</select>
 			<div id="userTable">
 				<table class="table" id="users">
 					<thead>

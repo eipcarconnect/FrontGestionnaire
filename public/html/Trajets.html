@@ -45,6 +45,22 @@
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('trajets', 'Trajets')"><i class='fas fa-file-excel'></i></button>
 				<button id="downloadLinkPDF" onclick="exportTableToPDF('rideTable', 'Trajets')"><i class='fas fa-file-pdf'></i></button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('Trajets')"><i class='fas fa-file-csv'></i></button>
+				<input id="search-trajet" placeholder="Rechercher un trajet" type="text" onkeyup="getCompanyRides()">
+				<select id="sort-selection-trajet" onchange="getCompanyRides()">
+					<option>Default</option>
+
+					<option>Nom par ordre croissant</option>
+					<option>Nom par ordre decroissant</option>
+
+					<option>Véhicule par ordre croissant</option>
+					<option>Véhicule par ordre decroissant</option>
+
+					<option>Employé par ordre croissant</option>
+					<option>Employé par ordre decroissant</option>
+
+					<option>Date par ordre croissant</option>
+					<option>Date par ordre decroissant</option>
+				</select>
 				<div id="rideTable">
 					<table class="table" id="trajets">
 						<thead>
