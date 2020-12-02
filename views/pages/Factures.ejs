@@ -27,7 +27,6 @@
         <div class="DOptions">
 						<a href="/vehicules">Véhicules</a><br/>
 						<a href="/trajets">Trajets</a><br/>
-						<a href="/factures">Factures</a><br/>
 						<a href="/contact">Nous contacter</a><br/>
 						<button class="logout" onclick="logout();">Logout</button><br/>
         </div>
@@ -38,12 +37,11 @@
 					<p id="ManagerName" class="ManagerName">Nom</p>
 			</div>
 			<div id="PageContent">
-				<h1 id="nbCars">0 véhicule</h1>
-				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button><br/>
-				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')">Export to excel</button>
-				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')">Export to pdf</button>
-				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')">Export to CSV</button>
-	        <table class="table" id="trajets">
+				<h1 id="nbCars">Facture</h1>
+				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'facture')">Export to excel</button>
+				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'facture')">Export to pdf</button>
+				<button id="downloadLinkExcel" onclick="exportTableToCSV('facture')">Export to CSV</button>
+	        <table class="table" id="facture">
 	          <tbody id="table_content">
 	          </tbody>
 	        </table>
@@ -51,31 +49,10 @@
 		</div>
 </div>
 
-<div id="addVehiculeModal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Ajouter véhicule</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
-			<div class="modal-body">
-				<form id="addVehiculeForm">
-						<input name="model" class="w3-input w3-border w3-round" placeholder="Modèle de la voiture" required></input><br/>
-						<input name="plate" class="w3-input w3-border w3-round" placeholder="Plaque d'immatriculation" required></input><br/>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<input type="button" class="btn btn-default" onclick="addVehicule();" value="Ajouter à la flotte">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-
-	</div>
-</div>
-
 </body>
+<script>
+	getCompanyRides(<%=id%>);
+</script>
 <script src="../js/index.js"></script>
 <script src="../js/auth.js"></script>
 </html>

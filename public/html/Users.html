@@ -9,7 +9,7 @@
 	 	<!-- <script src="https://jspdf.plugin.autotable.min.js"></script> -->
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	 	<script src="../js/trajets.js"></script>
+	 	<script src="../js/users.js"></script>
 		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script> -->
 	  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
 
@@ -38,22 +38,17 @@
 					<p id="ManagerName" class="ManagerName">Nom</p>
 			</div>
 			<div id="PageContent">
-				<button id="downloadLinkExcel" onclick="exportTableToExcel('trajets', 'Trajets')">Export to excel</button>
-				<button id="downloadLinkPDF" onclick="exportTableToPDF('trajets', 'Trajets')">Export to pdf</button>
-				<button id="downloadLinkExcel" onclick="exportTableToCSV('Trajets')">Export to CSV</button>
-				<table class="table" id="trajets">
+				<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')">Export to excel</button>
+				<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')">Export to pdf</button>
+				<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')">Export to CSV</button>
+				<table class="table" id="users">
 					<thead>
 						<tr>
 							<th scope="col">Nom</th>
-							<th scope="col">Véhicule</th>
-							<th scope="col">Employé</th>
-							<th scope="col">Début</th>
-							<th scope="col">Fin</th>
-							<th scope="col">Date</th>
-							<th scope="col">Lien Facture</th>
+							<th scope="col">Email</th>
 						</tr>
 					</thead>
-					<tbody id="trajets_content">
+					<tbody id="users_content">
 					</tbody>
 				</table>
 	    </div>

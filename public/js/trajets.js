@@ -19,11 +19,12 @@ function getCompanyRides()
 					console.log(e);
 					tmp +=  "<tr scope='row'>" +
 					"<td scope='col'>"+e["name"]+"</td>" +
-					"<td scope='col'>"+e["vehicule"]+"</td>" +
-					"<td scope='col'>"+e["user"]+"</td>" +
+					"<td scope='col'>"+e["vehicleLicencePlate"]+"</td>" +
+					"<td scope='col'>"+e["userId"]+"</td>" +
 					"<td scope='col'>"+e["start"]+"</td>" +
 					"<td scope='col'>"+e["end"]+"</td>" +
-					"<td scope='col'>"+e["date"]+"></td></tr>";
+					"<td scope='col'>"+e["date"]+"</td>" +
+					"<td scope='col'><a href='factures/"+e["_id"]+"'/>Facture</a></td></tr>";
 					content.innerHTML = tmp;
 			})
 		});
