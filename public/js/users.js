@@ -12,11 +12,9 @@ function getUsers()
 		})
 		.then(response => response.json())
 		.then(json => {
-			console.log(json);
 			let content = document.getElementById("users_content");
 			let tmp = "";
 			json["users"].forEach((e,i)=>{
-					console.log(e);
 					tmp +=  "<tr scope='row'>" +
 					"<td scope='col'>"+e["name"]+"</td>" +
 					"<td scope='col'>"+e["email"]+"</td></tr>";

@@ -8,12 +8,13 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	 	<!-- <script src="https://jspdf.plugin.autotable.min.js"></script> -->
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	 	<script src="../js/users.js"></script>
 		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script> -->
 	  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
 
-		<title>Trajets</title>
+		<title>Employés</title>
 </head>
 
 <body>
@@ -25,11 +26,11 @@
 					<b><u><p id="company">Entreprise</p></u></b>
 			</div>
 			<div class="DOptions">
-					<a href="/vehicules">Véhicules</a><br/>
-					<a href="/trajets">Trajets</a><br/>
-					<a href="/users">Employés</a><br/>
-					<i><a id="contact" href="/contact">Nous contacter</a></i><br/>
-					<button class="logout" onclick="logout();">Logout</button><br/>
+					<a href="/vehicules"><i class='fas fa-car-alt'></i> Véhicules</a><br/>
+					<a href="/trajets"><i class='fas fa-route'></i> Trajets</a><br/>
+					<a href="/users"><i class='fas fa-users'></i> Employés</a><br/>
+					<i><a id="contact" href="/contact"><i class="fas fa-edit"></i> Nous contacter</a></i><br/>
+					<button class="logout" onclick="logout();"><i class="fas fa-sign-out-alt"></i> Logout</button><br/>
 			</div>
 	</div>
   <div class="Content">
@@ -38,9 +39,9 @@
 				<p id="ManagerName" class="ManagerName">Nom</p>
 		</div>
 		<div id="PageContent">
-			<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')">Export to excel</button>
-			<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')">Export to pdf</button>
-			<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')">Export to CSV</button>
+			<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')"><i class='fas fa-file-excel'></i></button>
+			<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')"><i class='fas fa-file-pdf'></i></button>
+			<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')"><i class='fas fa-file-csv'></i></button>
 			<table class="table" id="users">
 				<thead>
 					<tr>
