@@ -31,7 +31,6 @@ code {
 
 .ManagerInfos {
 	position: absolute;
-	padding-top: 15px;
 	left: 87%;
 	justify-content: center;
 	display: flex;
@@ -90,9 +89,9 @@ code {
 	color: blue;
 }
 
-#contact a:hover{
+#contact:hover{
+	text-decoration: underline;
 	cursor: pointer;
-	color: #01064d;
 }
 
 #logo {
@@ -100,14 +99,18 @@ code {
   height: 100px;
 }
 
-/* .logo-connect {
-	width: 30%;
-	height: 30%;
-	border-radius: 50%;
-} */
-
 .logout {
+	border: red;
+	background-color: red;
+	width: 100%;
+	height: 30px;
 	bottom: 2%;
+}
+
+.logout:hover{
+	cursor: pointer;
+	border: #ad070d;
+	background-color: #ad070d;
 }
 
 /* ----- */
@@ -117,10 +120,16 @@ code {
   display: flex;
 	margin-left: 12%;
 	margin-top: 2%;
+	height: 100%;
   /* flex: 1; */
-  height: 100%;
   /* justify-content: center; */
   /* align-items: center; */
+}
+
+.contactForm {
+	display: flex;
+	justify-content: center;
+  align-items: center;
 }
 
 /* #PageContent{

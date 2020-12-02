@@ -13,7 +13,7 @@
 
 <body>
 
-	<div className="App">
+	<div class="App">
 		<div class="Drawer">
         <div class="DHeader">
             <img id="logo" src="../assets/CarConnect.png" height={100}/><br/>
@@ -23,11 +23,16 @@
 						<a href="/vehicules">Véhicules</a><br/>
 						<a href="/users">Employés</a><br/>
 						<a href="/trajets">Trajets</a><br/>
-						<a href="/contact">Nous contacter</a><br/>
+						<i><a id="contact" href="/contact">Nous contacter</a></i><br/>
 						<button class="logout" onclick="logout();">Logout</button><br/>
         </div>
     </div>
 		<div class="Content">
+			<div class="ManagerInfos">
+					<img class="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
+					<p id="ManagerName" class="ManagerName">Nom</p>
+			</div>
+			<div id="PageContent" class="contactForm">
 					<form id="contactForm" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
 					<h2 class="w3-center">Nous contacter</h2>
 
@@ -63,7 +68,9 @@
 
 					</form>
 				</div>
+			</div>
 	</div>
 
 </body>
+<script src="../js/index.js"></script>
 </html>

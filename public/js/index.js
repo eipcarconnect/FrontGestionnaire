@@ -13,8 +13,6 @@ function getCompanyVehicules()
 		})
 		.then(response => response.json())
 		.then(json => {
-			console.log(json)
-			document.getElementById("company").innerHTML = json["vehicles"][0]["company"];
 			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
 			let content = document.getElementById("table_content")
 			let tmp = "<tr>" +
@@ -89,7 +87,7 @@ function getManagerInfos()
 	})
 	.then(response => response.json())
 	.then(json => {
-		console.log(json)
+		document.getElementById("company").innerHTML = json.company;
 		document.getElementById("ManagerName").innerHTML = "<u>" + json.name + "</u>";
 	});
 }
@@ -100,4 +98,3 @@ function logout()
 }
 
 getManagerInfos();
-getCompanyVehicules();
