@@ -38,9 +38,8 @@ app.get('/signin', function(req, res){
 		res.render('pages/Auth', {auth: false});
 });
 
-app.get('/factures/:id', function(req, res){
-		var id = req.params.id;
-		res.render('pages/Factures', {id: id});
+app.get('/factures', function(req, res){
+		res.render('pages/Factures', {id: req.query.id});
 });
 
 app.get('/trajets', function(req, res){

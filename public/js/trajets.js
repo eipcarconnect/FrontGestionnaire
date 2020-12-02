@@ -82,7 +82,7 @@ function getCompanyRides()
 						"<td scope='col'>"+e["start"]+"</td>" +
 						"<td scope='col'>"+e["end"]+"</td>" +
 						"<td scope='col'>"+e["date"]+"</td>" +
-						"<td scope='col'><a href='factures/"+e["_id"]+"'/>Facture</a></td></tr>";
+						"<td scope='col'><a href='factures?id="+e["_id"]+"'>Facture</a></td></tr>";
 					content.innerHTML = tmp;
 					getUNIQUEUser(e["userId"], f);
 					f+=1;
