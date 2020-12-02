@@ -23,17 +23,19 @@
 <div class="App">
     <div class="Drawer">
         <div class="DHeader">
-            <img id="logo" src="../assets/CarConnect.png" height={100}/><br/>
-						<b><u><p id="company">Entreprise</p></u></b><br/>
+            <img id="logo" src="../assets/CarConnect.png" height={100}/>
+						<b><u><p id="company">Entreprise</p></u></b>
         </div>
         <div class="DOptions">
-					<a href="/vehicules"><i class='fas fa-car-alt'></i> Véhicules</a><br/>
-					<a href="/trajets"><i class='fas fa-route'></i> Trajets</a><br/>
-					<a href="/users"><i class='fas fa-users'></i> Employés</a><br/>
-					<i><a id="contact" href="/contact"><i class="fas fa-edit"></i> Nous contacter</a></i><br/>
-					<button class="logout" onclick="logout();"><i class="fas fa-sign-out-alt"></i> Logout</button><br/>
+				<a href="/vehicules"><i class='fas fa-car-alt'></i> Véhicules</a>
+				<a href="/trajets"><i class='fas fa-route'></i> Trajets</a>
+				<a href="/users" style="margin-bottom: 250px"><i class='fas fa-users'></i> Employés</a>
         </div>
-    </div>
+		<div class="DFooter">
+			<i style="margin-bottom: 8px"><a id="contact" href="/contact"><i class="fas fa-edit"></i> Nous contacter</a></i>
+			<button class="logout" onclick="logout();" style="display: block; width: 150px"><i class="fas fa-sign-out-alt"></i> Logout</button>
+		</div>
+	</div>
     <div class="Content">
 			<div class="ManagerInfos">
 					<img class="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
@@ -41,7 +43,7 @@
 			</div>
 			<div id="PageContent">
 				<h1 id="nbCars">0 véhicule</h1>
-				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button><br/>
+				<button data-toggle="modal" data-target="#addVehiculeModal">Ajouter un Véhicule à la flotte</button>
 				<button id="downloadLinkExcel" onclick="exportTableToExcel('vehicules', 'vehicules_list')"><i class='fas fa-file-excel'></i></button>
 				<button id="downloadLinkPDF" onclick="exportTableToPDF('vehicules', 'vehicules_list')"><i class='fas fa-file-pdf'></i></button>
 				<button id="downloadLinkExcel" onclick="exportTableToCSV('vehicules_list')"><i class='fas fa-file-csv'></i></button>
@@ -74,8 +76,8 @@
 			</div>
 			<div class="modal-body">
 				<form id="addVehiculeForm">
-						<input name="model" class="w3-input w3-border w3-round" placeholder="Modèle de la voiture" required></input><br/>
-						<input name="plate" class="w3-input w3-border w3-round" placeholder="Plaque d'immatriculation" required></input><br/>
+						<input name="model" class="w3-input w3-border w3-round" placeholder="Modèle de la voiture" required></input>
+						<input name="plate" class="w3-input w3-border w3-round" placeholder="Plaque d'immatriculation" required></input>
 				</form>
 			</div>
 			<div class="modal-footer">

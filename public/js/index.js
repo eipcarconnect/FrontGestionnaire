@@ -87,14 +87,31 @@ function getManagerInfos()
 	})
 	.then(response => response.json())
 	.then(json => {
-		document.getElementById("company").innerHTML = json.company;
-		document.getElementById("ManagerName").innerHTML = "<u>" + json.name + "</u>";
+		if (json.company !== undefined)
+			document.getElementById("company").innerHTML = json.company;
+		else
+			document.getElementById("company").innerHTML = "";
+		if (json.name !== undefined)
+			document.getElementById("ManagerName").innerHTML = "<u>" + json.name + "</u>";
+		else
+			document.getElementById("ManagerName").innerHTML = "<a href='/login' style='padding: 4px; background-color: white; border-radius: 4px; color: black'>Login</a>";
 	});
 }
 
 function logout()
 {
 	localStorage.setItem('token', "");
+	window.location.reload()
 }
 
 getManagerInfos();
+
+window.addEventListener( "pageshow", function ( event ) {
+	var historyTraversal = event.persisted ||
+		( typeof window.performance != "undefined" &&
+			window.performance.navigation.type === 2 );
+	if ( historyTraversal ) {
+		// Handle page restore.
+		window.location.reload();
+	}
+});
