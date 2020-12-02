@@ -13,7 +13,7 @@ function getCompanyVehicules()
 		})
 		.then(response => response.json())
 		.then(json => {
-			document.getElementById("nbCars").innerHTML = json["vehicles"].length + " véhicule";
+			document.getElementById("nbCars").innerHTML = "Véhicule : " +json["vehicles"].length;
 			let content = document.getElementById("table_content")
 			let tmp = "<tr>" +
 				"  <th scope='col' style='font-size: 20px'>Immatriculation</th>" +

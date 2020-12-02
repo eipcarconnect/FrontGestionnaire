@@ -12,6 +12,7 @@ function getUsers()
 		})
 		.then(response => response.json())
 		.then(json => {
+			document.getElementById("nbUsers").innerHTML = "Employés : " + json["users"].length;
 			let content = document.getElementById("users_content");
 			let tmp = "";
 			json["users"].forEach((e,i)=>{
