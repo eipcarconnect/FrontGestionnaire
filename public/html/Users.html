@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width: 100%; height: 100%">
+<html>
 <head>
     <link rel="stylesheet" href="../css/index.css">
     <meta charset="utf-8"/>
@@ -19,40 +19,40 @@
 <body>
 
 <div class="App">
-    <div class="Drawer">
-        <div class="DHeader">
-            <img id="logo" src="../assets/CarConnect.png" height={100}/><br/>
-						<b><u><p id="company">Entreprise</p></u></b><br/>
-        </div>
-        <div class="DOptions">
-						<a href="/vehicules">Véhicules</a><br/>
-						<a href="/trajets">Trajets</a><br/>
-						<a href="/users">Employés</a><br/>
-						<a href="/contact">Nous contacter</a><br/>
-						<button class="logout" onclick="logout();">Logout</button><br/>
-        </div>
-    </div>
-    <div class="Content">
-			<div class="ManagerInfos">
-					<img class="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
-					<p id="ManagerName" class="ManagerName">Nom</p>
+	<div class="Drawer">
+			<div class="DHeader">
+					<img id="logo" src="../assets/CarConnect.png" height={100}/>
+					<b><u><p id="company">Entreprise</p></u></b>
 			</div>
-			<div id="PageContent">
-				<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')">Export to excel</button>
-				<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')">Export to pdf</button>
-				<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')">Export to CSV</button>
-				<table class="table" id="users">
-					<thead>
-						<tr>
-							<th scope="col">Nom</th>
-							<th scope="col">Email</th>
-						</tr>
-					</thead>
-					<tbody id="users_content">
-					</tbody>
-				</table>
-	    </div>
+			<div class="DOptions">
+					<a href="/vehicules">Véhicules</a><br/>
+					<a href="/trajets">Trajets</a><br/>
+					<a href="/users">Employés</a><br/>
+					<i><a id="contact" href="/contact">Nous contacter</a></i><br/>
+					<button class="logout" onclick="logout();">Logout</button><br/>
+			</div>
+	</div>
+  <div class="Content">
+		<div class="ManagerInfos">
+				<img class="profile-picture" src="../assets/CarConnect.png" alt="Profile picture">
+				<p id="ManagerName" class="ManagerName">Nom</p>
 		</div>
+		<div id="PageContent">
+			<button id="downloadLinkExcel" onclick="exportTableToExcel('users', 'Employés')">Export to excel</button>
+			<button id="downloadLinkPDF" onclick="exportTableToPDF('users', 'Employés')">Export to pdf</button>
+			<button id="downloadLinkExcel" onclick="exportTableToCSV('Employés')">Export to CSV</button>
+			<table class="table" id="users">
+				<thead>
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Email</th>
+					</tr>
+				</thead>
+				<tbody id="users_content">
+				</tbody>
+			</table>
+    </div>
+	</div>
 </div>
 
 </body>
