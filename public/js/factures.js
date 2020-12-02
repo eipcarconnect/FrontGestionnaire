@@ -1,7 +1,6 @@
 function getCompanyRides(id)
 {
 		let _id = id.substring(1);
-		console.log(_id);
 		fetch("http://40.85.113.74:3000/data/getbills", {
 				method: "POST",
 				body: JSON.stringify({
@@ -13,7 +12,6 @@ function getCompanyRides(id)
 		})
 		.then(response => response.json())
 		.then(json => {
-			console.log(json);
 			let content = document.getElementById("table_content");
 			let tmp = "";
 			json["bills"].forEach((e,i)=>{
