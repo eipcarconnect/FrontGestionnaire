@@ -129,17 +129,20 @@ code {
 } */
 
 thead, tbody {
-  display: block;
+  display: flex;
+    flex-direction: column}
+td, th {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex: 1;
 }
-th {
-  color: #2c84cc;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-td {
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
+tr {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
 }
 
 table_content {

@@ -64,11 +64,12 @@ function getCompanyVehicules()
 			json["vehicles"].forEach((e,i)=>{
 				if (e["licencePlate"].includes(key) || e["model"].includes(key) )
 					tmp +=  "<tr scope='row'>" +
-						"<td scope='col'>"+e["licencePlate"]+"</td>" +
-						"<td scope='col'>"+e["model"]+"</td>" +
-						"<td scope='col'>"+e["kilometer"]+" km</td>" +
-						// "<td scope='col'>"+Math.ceil(Math.random()*10000).toString()+" km</td>" +
-						"<td scope='col'><input onclick=\"return false;\" type=checkbox "+(e["breakPressed"]?"checked":"")+"></td></tr>";
+								"<td scope='col'>"+e["licencePlate"]+"</td>" +
+								"<td scope='col'>"+e["model"]+"</td>" +
+								"<td scope='col'>"+e["kilometer"]+" km</td>" +
+								// "<td scope='col'>"+Math.ceil(Math.random()*10000).toString()+" km</td>" +
+								"<td scope='col'><input onclick=\"return false;\" type=checkbox "+(e["breakPressed"]?"checked":"")+"></td>" +
+							"</tr>";
 			})
 			content.innerHTML = tmp;
 		});

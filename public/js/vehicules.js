@@ -13,5 +13,11 @@ function addVehicule() {
 		    }
 		})
 		.then(response => response.json())
-		.then(json => console.log(json));
+		.then(json => {
+			if (json.success) {
+				alert("Véhicule créé avec succès.")
+				form.reset()
+			} else
+				alert("Une erreur est survenue.\n" + json.error)
+		});
 }
