@@ -15,7 +15,17 @@ function signInUser()
 	    }
 	})
 	.then(response => response.json())
-	.then(json => localStorage.setItem('token', json.token));
+	.then(json => {
+		if (json.success) {
+			localStorage.setItem('token', json.token)
+			history.back()
+		} else {
+			if (json.error === "PasswordIsWeak")
+				alert("Le mot de passe est trop faible.")
+			else if (json.error === "WrongPassword")
+				alert("Mauvais mot de passe.")
+		}
+	});
 }
 
 function logInUser()
