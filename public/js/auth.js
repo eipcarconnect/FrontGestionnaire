@@ -57,7 +57,9 @@ function logInUser()
 }
 
 function moveImg(val) {
-		var page = "https://front-gestionnaire-web.herokuapp.com";
+		var url = window.location.href;
+		url = url.replace( "/login", "");
+		url = url.replace( "/signin", "");
 		imgObj = document.getElementById('img');
     if (val == 1) {
 			imgObj.className = "box2 slide-right";
@@ -65,7 +67,7 @@ function moveImg(val) {
 			document.getElementById("signinForm").hidden = false;
 			document.getElementById("loginForm").hidden = true; },
 			715);
-			page += "/signin";
+			url += "/signin";
     }
 		else
 		{
@@ -74,9 +76,9 @@ function moveImg(val) {
 			document.getElementById("signinForm").hidden = true;
 			document.getElementById("loginForm").hidden = false;},
 			715);
-			page += "/login";
+			url += "/login";
 		}
-		history.pushState({id: 'authpage'}, 'Authentification', page);
+		history.pushState({id: 'authpage'}, 'Authentification', url);
 }
 
 
@@ -84,6 +86,8 @@ function logout()
 {
 	localStorage.setItem('token', "");
 }
+
+console.log(window.location.href);
 
 // function isLogged() {
 // 		var wait = false;

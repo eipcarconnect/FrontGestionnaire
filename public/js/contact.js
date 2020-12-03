@@ -1,7 +1,8 @@
 function sendEmail()
 {
 	var form = document.getElementById("contactForm");
-	fetch("http://127.0.0.1:8000/contactus?email=" + form.email.value + "&subject=" + form.subject.value + "&content=" + form.message.value + "&name=" + form.name.value, {
+	var url = window.location.href;
+	fetch(url + "us?email=" + form.email.value + "&subject=" + form.subject.value + "&content=" + form.message.value + "&name=" + form.name.value, {
 			method: "GET",
 			headers: {
 					"Accept": "*/*",
