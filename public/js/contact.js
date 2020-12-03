@@ -1,19 +1,13 @@
 function sendEmail()
 {
 	var form = document.getElementById("contactForm");
-	fetch("http://127.0.0.1:8000/contactus", {
-			method: "POST",
-			body: JSON.stringify({
-				from: form.email.value,
-				subject: form.subject.value,
-				content: form.message.value,
-				name: form.name.value
-			}),
+	fetch("http://127.0.0.1:8000/contactus?email=" + form.email.value + "&subject=" + form.subject.value + "&content=" + form.message.value + "&name=" + form.name.value, {
+			method: "GET",
 			headers: {
 					"Accept": "*/*",
 					"Content-type": "application/json; charset=UTF-8"
 			}
 	})
-	// .then(response => response.json())
-	// .then(json => console.log(json));
+	.then(document.getElementById("contactForm").reset())
+	.then(document.getElementById("alertMessage").hidden = false)
 }

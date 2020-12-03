@@ -53,10 +53,10 @@ app.get('/users', function(req, res){
     res.sendFile('./public/html/Users.html', {root: __dirname});
 });
 
-app.post('/contactus', function(req, res){
-		console.log(req.body);
-		sendMail(req.query.from, req.query.subject, req.query.content, req.name);
-		res.sendFile('./public/html/Contact.html', {root: __dirname});
+app.get('/contactus', function(req, res){
+		sendMail(req.query.email, req.query.subject, req.query.content, req.query.name);
+		// res.sendFile('./public/html/Contact.html', {root: __dirname});
+		return ("good");
 });
 
 app.get('/public/js/auth.js', function(req, res){
@@ -77,15 +77,15 @@ function sendMail(from, subject, text, name)
 	var mailOptions = {
 	  from: from,
 	  to: 'eipcarconnect@gmail.com',
-	  subject: subject + " par " + name+ " ( " + from + " )",
+	  subject: subject + " par " + name + " ( " + from + " )",
 	  text: text
 	};
 
-	// transporter.sendMail(mailOptions, function(error, info){
-	//   if (error) {
-	//     console.log(error);
-	//   } else {
-	//     console.log('Email sent: ' + info.response);
-	//   }
-	// });
+	transporter.sendMail(mailOptions, function(error, info){
+	  if (error) {
+	    console.log(error);
+	  } else {
+	    console.log('Email sent: ' + info.response);
+	  }
+	});
 }
