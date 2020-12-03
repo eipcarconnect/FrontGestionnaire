@@ -17,6 +17,7 @@ function addVehicule() {
 			if (json.success) {
 				alert("Véhicule créé avec succès.")
 				form.reset()
+				getManagerInfos()
 			} else
 				alert("Une erreur est survenue.\n" + json.error)
 		});

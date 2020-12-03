@@ -61,7 +61,8 @@ function getCompanyVehicules()
 
 			json["vehicles"].forEach((e,i)=>{
 				if (e["licencePlate"].includes(key) || e["model"].includes(key) )
-					tmp +=  "<tr scope='row'>" +
+					console.log(e)
+					tmp +=  "<tr scope='row'"+(e["pressure"] < 1.8 || e["brakeUsage"] > 75?"style='background-color: red'":"")+">" +
 								"<td scope='col'>"+e["licencePlate"]+"</td>" +
 								"<td scope='col'>"+e["model"]+"</td>" +
 								"<td scope='col'>"+e["kilometer"]+" km</td>" +
@@ -71,6 +72,16 @@ function getCompanyVehicules()
 			})
 			content.innerHTML = tmp;
 		});
+_id: "5fc7f2ce1387e50012a05101"
+battery: 79
+brakeUsage: 0
+company: "CarConnect"
+fuel: 42
+kilometer: 251000
+licencePlate: "71-DVR-03"
+model: "Citroën C3"
+oil: 98
+pressure: 2.6
 }
 
 function getManagerInfos()
