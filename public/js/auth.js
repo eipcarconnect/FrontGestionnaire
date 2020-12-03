@@ -2,7 +2,7 @@ function signInUser()
 {
 	var token;
 	var form = document.getElementById("signinForm");
-	fetch("https://40.85.113.74:3000/auth/manager/signup", {
+	fetch("http://40.85.113.74:3000/auth/manager/signup", {
 	    method: "POST",
 	    body: JSON.stringify({
 				name: form.name.value,
@@ -22,8 +22,8 @@ function signInUser()
 		} else {
 			if (json.error === "PasswordIsWeak")
 				alert("Le mot de passe est trop faible.")
-			else if (json.error === "WrongPassword")
-				alert("Mauvais mot de passe.")
+			else
+				alert(json.error)
 		}
 	});
 }
@@ -32,7 +32,7 @@ function logInUser()
 {
 	var token;
 	var form = document.getElementById("loginForm");
-	fetch("https://40.85.113.74:3000/auth/manager/signin", {
+	fetch("http://40.85.113.74:3000/auth/manager/signin", {
 			method: "POST",
 			body: JSON.stringify({
 				email: form.email.value,
