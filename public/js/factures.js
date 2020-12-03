@@ -1,7 +1,7 @@
 function getCompanyRides(id)
 {
 		let _id = id.substring(1);
-		fetch("http://40.85.113.74:3000/data/getbills", {
+		fetch("https://40.85.113.74:3000/data/getbills", {
 				method: "POST",
 				body: JSON.stringify({
 					rideId: _id,

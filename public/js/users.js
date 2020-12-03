@@ -1,7 +1,7 @@
 function getUsers()
 {
 		var token = localStorage.getItem('token');
-		fetch("http://40.85.113.74:3000/data/manager/getusers", {
+		fetch("https://40.85.113.74:3000/data/manager/getusers", {
 				method: "POST",
 				body: JSON.stringify({
 					token: token,

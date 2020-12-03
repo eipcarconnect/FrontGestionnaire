@@ -2,7 +2,7 @@
 function getCompanyVehicules()
 {
 		var token = localStorage.getItem('token');
-		fetch("http://40.85.113.74:3000/data/manager/getvehicles", {
+		fetch("https://40.85.113.74:3000/data/manager/getvehicles", {
 				method: "POST",
 				body: JSON.stringify({
 					token: token,
@@ -87,7 +87,7 @@ pressure: 2.6
 function getManagerInfos()
 {
 	var token = localStorage.getItem('token');
-	fetch("http://40.85.113.74:3000/auth/manager/getinfo", {
+	fetch("https://40.85.113.74:3000/auth/manager/getinfo", {
 			method: "POST",
 			body: JSON.stringify({
 				token: token,
