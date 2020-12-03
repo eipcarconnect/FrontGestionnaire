@@ -12,7 +12,6 @@ var transporter = nodemailer.createTransport({
 	}
 });
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -38,9 +37,8 @@ app.get('/signin', function(req, res){
 		res.render('pages/Auth', {auth: false});
 });
 
-app.get('/factures/:id', function(req, res){
-		var id = req.params.id;
-		res.render('pages/Factures', {id: id});
+app.get('/factures/', function(req, res){
+		res.render('pages/Factures', {id: "_" + req.query.id});
 });
 
 app.get('/trajets', function(req, res){
