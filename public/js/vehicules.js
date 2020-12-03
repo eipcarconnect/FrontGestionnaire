@@ -1,7 +1,7 @@
 function addVehicule() {
 		var token = localStorage.getItem('token');
 		var form = document.getElementById("addVehiculeForm");
-		fetch("https://40.85.113.74:3000/data/manager/addvehicle", {
+		fetch("http://40.85.113.74:3000/data/manager/addvehicle", {
 		    method: "POST",
 		    body: JSON.stringify({
 					token: token,
