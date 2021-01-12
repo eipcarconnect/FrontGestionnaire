@@ -74,6 +74,7 @@ function getCompanyRides()
 			}
 
 			json["rides"].forEach((e,i)=>{
+				console.log(key, e["name"].includes(key), e["vehicleLicencePlate"].includes(key), e["start"].includes(key), e["end"].includes(key), e["date"].includes(key))
 				if (e["name"].includes(key) || e["vehicleLicencePlate"].includes(key) || e["start"].includes(key) || e["end"].includes(key) || e["date"].includes(key) ) {
 					tmp +=  "<tr scope='row'>" +
 					"<td scope='col'>"+e["name"]+"</td>" +
@@ -88,6 +89,7 @@ function getCompanyRides()
 					f+=1;
 				}
 			})
+			content.innerHTML = tmp;
 		});
 }
 

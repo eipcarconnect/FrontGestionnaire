@@ -6,7 +6,7 @@ function addVehicule() {
 		    body: JSON.stringify({
 					token: token,
 					model: form.model.value,
-					licencePlate: form.plate.value
+						licencePlate: form.plate.value
 		    }),
 		    headers: {
 		        "Content-type": "application/json; charset=UTF-8"

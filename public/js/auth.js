@@ -1,6 +1,5 @@
 function signInUser()
 {
-	var token;
 	var form = document.getElementById("signinForm");
 	fetch("http://40.85.113.74:3000/auth/manager/signup", {
 	    method: "POST",
@@ -30,7 +29,6 @@ function signInUser()
 
 function logInUser()
 {
-	var token;
 	var form = document.getElementById("loginForm");
 	fetch("http://40.85.113.74:3000/auth/manager/signin", {
 			method: "POST",
